@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep-ink: #0B1114;
+  --color-petrol: #087F8C;
+  --color-petrol-hover: #066670;
+  --color-seafoam: #A8E6CF;
+  --color-seafoam-dark: #76C7AA;
+  --color-seafoam-light: #F0FAF6;
+  --color-bone: #F1EDE3;
+  --color-bone-card: #F9F7F1;
+  --color-graphite: #242C30;
+  --color-graphite-muted: #4A555B;
+  --color-graphite-border: #333D43;
+  --color-brass: #B99A5B;
+
+  --font-space: var(--font-space-grotesk), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+:root {
+  --background: #F1EDE3;
+  --foreground: #0B1114;
+}
+
+/* Custom Base Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #F1EDE3;
+  color: #0B1114;
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background-color: #087F8C;
+  color: #F1EDE3;
+}
+
+/* Technical Dotted Grid Background */
+.bg-tech-grid {
+  background-image: radial-gradient(#242C30 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-tech-grid-light {
+  background-image: radial-gradient(rgba(8, 127, 140, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-tech-grid-dark {
+  background-image: radial-gradient(rgba(168, 230, 207, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Technical Blueprint Line Patterns */
+.bg-blueprint-lines {
+  background-image: 
+    linear-gradient(to right, rgba(36, 44, 48, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(36, 44, 48, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Terminal Cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1EDE3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #087F8C;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #066670;
+}
