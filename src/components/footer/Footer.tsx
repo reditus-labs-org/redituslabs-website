@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
+import { ReditusIcon } from "@/components/ui/ReditusLogo";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -23,10 +24,8 @@ export function Footer() {
 
           {/* Column 1: Brand & Tagline */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-petrol text-bone font-display font-bold text-lg flex items-center justify-center">
-                R
-              </div>
+            <Link href="/" className="flex items-center gap-3">
+              <ReditusIcon size="md" />
               <span className="font-display font-extrabold text-xl tracking-wider text-bone">
                 REDITUS
               </span>

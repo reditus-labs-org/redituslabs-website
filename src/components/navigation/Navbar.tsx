@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Terminal } from "lucide-react";
+import { ReditusLogo } from "@/components/ui/ReditusLogo";
 
 interface NavbarProps {
   onOpenInquiry: (initialType?: string) => void;
@@ -40,23 +41,7 @@ export function Navbar({ onOpenInquiry }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Left: Brand Logo / Mark */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 group focus:outline-hidden"
-          >
-            <div className="w-8 h-8 bg-deep-ink text-seafoam border border-petrol flex items-center justify-center font-display font-bold text-lg group-hover:bg-petrol group-hover:text-bone transition-colors duration-200 shadow-sm">
-              R
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-extrabold text-lg tracking-wider text-deep-ink flex items-center gap-1.5">
-                REDITUS
-                <span className="w-1.5 h-1.5 bg-petrol inline-block rounded-full animate-pulse"></span>
-              </span>
-              <span className="font-mono text-[9px] text-graphite-muted tracking-widest uppercase">
-                ENGINEERING STUDIO
-              </span>
-            </div>
-          </Link>
+          <ReditusLogo size="md" />
 
           {/* Center: Nav Items (Desktop) */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
