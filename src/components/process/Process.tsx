@@ -26,7 +26,7 @@ export function Process() {
       <div className="absolute inset-0 bg-tech-grid-light opacity-30 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="max-w-3xl mb-20 space-y-4">
           <div className="flex items-center gap-2">
@@ -44,7 +44,7 @@ export function Process() {
 
         {/* Process Steps Connected via Dotted Lines */}
         <div className="relative">
-          
+
           {/* Desktop Connecting Dotted Technical Line */}
           <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 border-t-2 border-dashed border-petrol/40 z-0"></div>
 

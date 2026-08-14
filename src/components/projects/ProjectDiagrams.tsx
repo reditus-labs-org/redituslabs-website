@@ -1,55 +1,49 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { ProjectItem } from "@/data/projects";
 
 export function ProjectDiagram({ visualType }: { visualType: ProjectItem["visualType"] }) {
   switch (visualType) {
     case "neural":
       return (
-        <svg viewBox="0 0 300 180" className="w-full h-40 text-petrol" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Neural Vector Grid */}
-          <g stroke="#087F8C" strokeWidth="1.2">
-            <line x1="40" y1="40" x2="150" y2="90" opacity="0.6" />
-            <line x1="40" y1="140" x2="150" y2="90" opacity="0.6" />
-            <line x1="150" y1="90" x2="260" y2="40" stroke="#A8E6CF" strokeWidth="1.5" />
-            <line x1="150" y1="90" x2="260" y2="140" stroke="#A8E6CF" strokeWidth="1.5" />
-            
-            <circle cx="40" cy="40" r="10" fill="#F1EDE3" stroke="#242C30" strokeWidth="2" />
-            <circle cx="40" cy="140" r="10" fill="#F1EDE3" stroke="#242C30" strokeWidth="2" />
-            <circle cx="150" cy="90" r="18" fill="#087F8C" fillOpacity="0.3" stroke="#087F8C" strokeWidth="2" />
-            <circle cx="150" cy="90" r="8" fill="#A8E6CF" />
-            <circle cx="260" cy="40" r="12" fill="#F1EDE3" stroke="#087F8C" strokeWidth="2" />
-            <circle cx="260" cy="140" r="12" fill="#F1EDE3" stroke="#087F8C" strokeWidth="2" />
-          </g>
-          <text x="110" y="160" fill="#242C30" fontSize="10" fontFamily="var(--font-jetbrains-mono)">RAG_RETRIEVAL // EMBED_VEC</text>
-        </svg>
+        <div className="w-full h-48 sm:h-56 flex items-center justify-center relative">
+          <Image
+            src="/images/project-athenalm.png"
+            alt="ATHENALM AI RAG Platform Architecture"
+            width={500}
+            height={400}
+            className="w-full h-full object-contain mix-blend-multiply scale-105"
+            priority
+          />
+        </div>
       );
     case "restaurant":
       return (
-        <svg viewBox="0 0 300 180" className="w-full h-40 text-petrol" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Isometric Restaurant POS Block */}
-          <g stroke="#087F8C" strokeWidth="1.5">
-            <polygon points="150,20 230,60 150,100 70,60" fill="#F1EDE3" stroke="#242C30" />
-            <polygon points="230,60 230,120 150,160 150,100" fill="#087F8C" fillOpacity="0.3" />
-            <polygon points="150,100 150,160 70,120 70,60" fill="#A8E6CF" fillOpacity="0.5" />
-            <rect x="115" y="45" width="70" height="30" fill="#242C30" rx="2" transform="rotate(-15 150 60)" />
-          </g>
-          <text x="90" y="170" fill="#242C30" fontSize="10" fontFamily="var(--font-jetbrains-mono)">POS_SYSTEM // SYNC_OK</text>
-        </svg>
+        <div className="w-full h-48 sm:h-56 flex items-center justify-center relative">
+          <Image
+            src="/images/project-foodpandora.png"
+            alt="FOODPANDORA Restaurant Management System"
+            width={500}
+            height={400}
+            className="w-full h-full object-contain mix-blend-multiply scale-105"
+            priority
+          />
+        </div>
       );
     case "network":
       return (
-        <svg viewBox="0 0 300 180" className="w-full h-40 text-petrol" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Connected Geometric Onboarding Mesh */}
-          <g stroke="#087F8C" strokeWidth="1.5">
-            <rect x="30" y="50" width="60" height="60" fill="#087F8C" fillOpacity="0.2" stroke="#087F8C" />
-            <rect x="120" y="30" width="60" height="60" fill="#A8E6CF" fillOpacity="0.4" stroke="#087F8C" />
-            <rect x="210" y="60" width="60" height="60" fill="#B99A5B" fillOpacity="0.2" stroke="#B99A5B" />
-            <path d="M 90 80 L 120 60 M 180 60 L 210 90" stroke="#087F8C" strokeWidth="2" strokeDasharray="3 3" />
-          </g>
-          <text x="80" y="155" fill="#242C30" fontSize="10" fontFamily="var(--font-jetbrains-mono)">VENDOR_API // MESH_NET</text>
-        </svg>
+        <div className="w-full h-48 sm:h-56 flex items-center justify-center relative">
+          <Image
+            src="/images/project-onboardhub.png"
+            alt="ONBOARDHUB Vendor Onboarding Platform"
+            width={500}
+            height={400}
+            className="w-full h-full object-contain mix-blend-multiply scale-105"
+            priority
+          />
+        </div>
       );
     case "medical":
       return (

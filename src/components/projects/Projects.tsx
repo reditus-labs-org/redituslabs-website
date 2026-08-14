@@ -96,8 +96,8 @@ export function Projects({ onOpenInquiry }: ProjectsProps) {
                   {project.description}
                 </p>
 
-                {/* Technical Line-Art Diagram */}
-                <div className="bg-bone border border-graphite/10 p-2 mb-6 rounded-xs flex items-center justify-center">
+                {/* Project Isometric Illustration / Diagram */}
+                <div className="my-5 flex items-center justify-center relative w-full overflow-hidden">
                   <ProjectDiagram visualType={project.visualType} />
                 </div>
               </div>

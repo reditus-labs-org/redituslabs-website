@@ -17,7 +17,7 @@ export function Metrics() {
       <div className="absolute inset-0 bg-tech-grid-dark opacity-20 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 font-mono text-xs font-bold tracking-widest text-seafoam uppercase bg-seafoam/10 border border-seafoam/30 px-3 py-1">
@@ -28,7 +28,7 @@ export function Metrics() {
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-bone">
             Engineering impact at scale.
           </h2>
-          
+
           <p className="font-mono text-xs text-graphite-muted">
             [ METRICS_VERIFICATION_LOG // RECORDED_METRICS ]
           </p>
@@ -68,7 +68,7 @@ export function Metrics() {
           </div>
 
           <pre className="text-seafoam leading-relaxed select-none">
-{`projects = 50+
+            {`projects = 50+
 clients  = 30+
 impact   = HIGH
 status   = BUILDING`}

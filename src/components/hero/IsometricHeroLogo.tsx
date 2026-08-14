@@ -3,144 +3,250 @@
 import React from "react";
 
 export function IsometricHeroLogo() {
+  const hatchId = React.useId().replace(/:/g, "");
+  const hatch = `url(#${hatchId})`;
+
   return (
-    <div className="relative w-full max-w-lg aspect-square mx-auto flex items-center justify-center select-none">
-      {/* Background Dotted Coordinate Grid */}
-      <div className="absolute inset-0 bg-tech-grid-light opacity-60 rounded-lg"></div>
-
-      {/* Outer Technical Blueprint Box */}
-      <div className="absolute inset-2 border border-graphite/20 pointer-events-none flex flex-col justify-between p-3">
-        <div className="flex justify-between font-mono text-[9px] text-graphite-muted">
-          <span>COORDINATES: [37.7749, -122.4194]</span>
-          <span>SCALE: 1:1.0</span>
-        </div>
-        <div className="flex justify-between font-mono text-[9px] text-graphite-muted">
-          <span>DWG_NO: REDITUS-R-ISO-2026</span>
-          <span className="text-petrol">STATUS: ACTIVE</span>
-        </div>
-      </div>
-
-      {/* Corner Crosshairs */}
-      <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-petrol"></div>
-      <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-petrol"></div>
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-petrol"></div>
-      <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-petrol"></div>
-
-      {/* Architectural Line-Art Isometric "R" SVG */}
+    <div className="relative mx-auto flex aspect-square w-full max-w-[620px] select-none items-center justify-center">
       <svg
-        viewBox="0 0 500 500"
-        className="w-4/5 h-4/5 drop-shadow-lg relative z-10 transition-transform duration-500 hover:scale-[1.02]"
-        fill="none"
+        viewBox="0 0 1000 1000"
         xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Impossible isometric R"
+        className="h-full w-full"
       >
         <defs>
-          {/* Gradients */}
-          <linearGradient id="petrolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#087F8C" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#066670" stopOpacity="0.7" />
-          </linearGradient>
-
-          <linearGradient id="seafoamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#A8E6CF" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#76C7AA" stopOpacity="0.1" />
-          </linearGradient>
-
-          <pattern id="dotPattern" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1" fill="#242C30" fillOpacity="0.2" />
+          <pattern
+            id={hatchId}
+            width="16"
+            height="16"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(45)"
+          >
+            <line
+              x1="0"
+              y1="-5"
+              x2="0"
+              y2="22"
+              stroke="#111"
+              strokeWidth="4"
+            />
           </pattern>
         </defs>
 
-        {/* Isometric Grid Background Construction Lines */}
-        <g stroke="#242C30" strokeOpacity="0.15" strokeWidth="1" strokeDasharray="3 3">
-          <line x1="50" y1="120" x2="450" y2="350" />
-          <line x1="450" y1="120" x2="50" y2="350" />
-          <line x1="250" y1="50" x2="250" y2="450" />
-          <circle cx="250" cy="250" r="180" />
-          <circle cx="250" cy="250" r="100" />
-        </g>
+        <g
+          fill="#fff"
+          stroke="#111"
+          strokeWidth="5"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        >
+          {/* Lower-left returning surface */}
+          <path
+            d="
+              M 280 878
+              L 365 866
+              L 622 609
+              L 558 545
+              Z
+            "
+            fill={hatch}
+          />
 
-        {/* Isometric "R" Main Architectural Solid & Line Structures */}
-        {/* Left Vertical Pillar Back Shadow/Side Face */}
-        <path
-          d="M 140 120 L 190 90 L 190 390 L 140 420 Z"
-          fill="#242C30"
-          fillOpacity="0.08"
-          stroke="#242C30"
-          strokeWidth="1.5"
-        />
+          {/* Left vertical depth */}
+          <path
+            d="
+              M 220 302
+              L 280 359
+              L 280 878
+              L 220 818
+              Z
+            "
+            fill={hatch}
+          />
 
-        {/* Left Vertical Pillar Main Front Face */}
-        <path
-          d="M 190 90 L 240 120 L 240 420 L 190 390 Z"
-          fill="url(#petrolGrad)"
-          stroke="#087F8C"
-          strokeWidth="2"
-        />
+          {/* Left vertical front */}
+          <path
+            d="
+              M 280 359
+              L 329 408
+              L 329 752
+              L 558 526
+              L 600 568
+              L 365 866
+              L 280 878
+              Z
+            "
+          />
 
-        {/* Top Horizontal Loop Outer Isometric Cube Face */}
-        <path
-          d="M 240 120 L 350 180 L 350 250 L 240 190 Z"
-          fill="url(#seafoamGrad)"
-          stroke="#087F8C"
-          strokeWidth="2"
-        />
+          {/* Lower thickness of the diagonal leg */}
+          <path
+            d="
+              M 365 521
+              L 651 807
+              L 815 807
+              L 772 854
+              L 601 854
+              L 360 600
+              Z
+            "
+            fill={hatch}
+          />
 
-        {/* Top Loop Curve / Inner Block */}
-        <path
-          d="M 350 180 L 400 150 L 400 220 L 350 250 Z"
-          fill="#087F8C"
-          fillOpacity="0.2"
-          stroke="#087F8C"
-          strokeWidth="1.5"
-        />
+          {/* Main white diagonal leg */}
+          <path
+            d="
+              M 373 365
+              L 748 740
+              L 815 740
+              L 815 800
+              L 651 800
+              L 365 521
+              Z
+            "
+          />
 
-        {/* Middle Connector Joint */}
-        <path
-          d="M 190 240 L 350 250 L 300 280 L 190 270 Z"
-          fill="#B99A5B"
-          fillOpacity="0.3"
-          stroke="#B99A5B"
-          strokeWidth="1.5"
-        />
+          {/* Hatched edge running toward the leg ending */}
+          <path
+            d="
+              M 373 371
+              L 464 371
+              L 815 740
+              L 748 740
+              Z
+            "
+            fill={hatch}
+          />
 
-        {/* Diagonal Leg Extension Isometric Front */}
-        <path
-          d="M 240 270 L 360 410 L 310 440 L 190 300 Z"
-          fill="url(#petrolGrad)"
-          stroke="#087F8C"
-          strokeWidth="2"
-        />
+          {/* Top horizontal surface */}
+          <path
+            d="
+              M 203 112
+              L 648 112
+              L 594 154
+              L 158 154
+              Z
+            "
+          />
 
-        {/* Diagonal Leg Side Face */}
-        <path
-          d="M 360 410 L 400 380 L 350 410 L 310 440 Z"
-          fill="#A8E6CF"
-          fillOpacity="0.5"
-          stroke="#087F8C"
-          strokeWidth="1.5"
-        />
+          {/* Top horizontal depth */}
+          <path
+            d="
+              M 158 154
+              L 594 154
+              L 557 218
+              L 158 218
+              Z
+            "
+            fill={hatch}
+          />
 
-        {/* Technical Node Dots & Dimension Lines */}
-        <g stroke="#087F8C" strokeWidth="1">
-          {/* Top Node */}
-          <circle cx="190" cy="90" r="5" fill="#F1EDE3" stroke="#087F8C" strokeWidth="2" />
-          <circle cx="400" cy="150" r="5" fill="#F1EDE3" stroke="#087F8C" strokeWidth="2" />
-          <circle cx="360" cy="410" r="5" fill="#A8E6CF" stroke="#087F8C" strokeWidth="2" />
-          <circle cx="190" cy="390" r="5" fill="#F1EDE3" stroke="#087F8C" strokeWidth="2" />
+          {/* Outer diagonal top surface */}
+          <path
+            d="
+              M 648 112
+              L 833 296
+              L 788 348
+              L 594 154
+              Z
+            "
+          />
 
-          {/* Dimension arrows */}
-          <line x1="120" y1="120" x2="120" y2="420" stroke="#242C30" strokeOpacity="0.4" strokeDasharray="2 2" />
-          <text x="95" y="275" fill="#242C30" fontSize="11" fontFamily="var(--font-jetbrains-mono)">H: 300px</text>
+          {/* Outer diagonal depth */}
+          <path
+            d="
+              M 594 154
+              L 788 348
+              L 730 410
+              L 557 218
+              Z
+            "
+            fill={hatch}
+          />
+
+          {/* Far-right end face */}
+          <path
+            d="
+              M 788 348
+              L 833 296
+              L 833 438
+              L 788 480
+              Z
+            "
+            fill={hatch}
+          />
+
+          {/* Long right returning face */}
+          <path
+            d="
+              M 730 410
+              L 788 348
+              L 788 480
+              L 625 628
+              L 577 580
+              Z
+            "
+            fill={hatch}
+          />
+
+          {/* Upper inner top surface */}
+          <path
+            d="
+              M 220 302
+              L 269 265
+              L 540 265
+              L 497 302
+              Z
+            "
+          />
+
+          {/* Upper inner diagonal depth */}
+          <path
+            d="
+              M 497 302
+              L 540 265
+              L 668 405
+              L 626 453
+              Z
+            "
+            fill={hatch}
+          />
+
+          {/* Main upper R face */}
+          <path
+            d="
+              M 220 302
+              L 497 302
+              L 626 453
+              L 580 500
+              L 744 661
+              L 658 740
+              Z
+            "
+          />
+
+          {/* Inner opening */}
+          <path
+            d="
+              M 373 371
+              L 464 371
+              L 580 500
+              L 533 536
+              Z
+            "
+            fill={hatch}
+          />
+
+          {/* Main impossible crossing */}
+          <path
+            d="
+              M 220 302
+              L 658 740
+            "
+            fill="none"
+          />
         </g>
       </svg>
-
-      {/* Floating Monospace ASCII Indicators around R */}
-      <div className="absolute top-6 right-6 font-mono text-[10px] bg-deep-ink/90 text-seafoam border border-graphite/40 px-2 py-1 shadow-md">
-        ISOMETRIC_R :: OK
-      </div>
-      <div className="absolute bottom-6 left-6 font-mono text-[9px] text-graphite-muted bg-bone/90 border border-graphite/20 px-2 py-1">
-        SYS.GEOMETRY // 3D_VECTOR
-      </div>
     </div>
   );
 }
