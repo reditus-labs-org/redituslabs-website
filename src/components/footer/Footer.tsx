@@ -111,8 +111,8 @@ export function Footer() {
             © 2026 REDITUS. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-bone transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-bone transition-colors">Terms of Service</a>
+            <Link href="/privacy" className="hover:text-bone transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-bone transition-colors">Terms of Service</Link>
           </div>
         </div>
 
