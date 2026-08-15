@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, Wrench, RefreshCw, ShieldCheck, Zap, AlertTriangle, CheckCircle2, Cpu } from "lucide-react";
+import { ArrowRight, Wrench, ShieldCheck, Zap, AlertTriangle, CheckCircle2, Cpu } from "lucide-react";
 import { AsciiAtom } from "@/components/ascii/AsciiSystem";
-import { BrokenDoubleBorder } from "@/components/ascii/DecorativeLines";
 
 interface VibeCodeRescueProps {
   onOpenInquiry: (initialType?: string) => void;

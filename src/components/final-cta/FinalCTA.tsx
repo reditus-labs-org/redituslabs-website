@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, Mail, MapPin, Globe } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
 
 interface FinalCTAProps {
   onOpenInquiry: (initialType?: string) => void;

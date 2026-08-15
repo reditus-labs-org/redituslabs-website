@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { PROJECTS, ProjectItem } from "@/data/projects";
-import { ArrowRight, ArrowUpRight, CheckCircle, ExternalLink, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, X } from "lucide-react";
 import { ProjectDiagram } from "./ProjectDiagrams";
 
 interface ProjectsProps {

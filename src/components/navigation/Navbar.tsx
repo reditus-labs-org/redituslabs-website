@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowRight, Terminal } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 interface NavbarProps {
   onOpenInquiry: (initialType?: string) => void;

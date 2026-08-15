@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, ArrowRight, Check, Wrench, Sparkles, Terminal } from "lucide-react";
+import { X, ArrowRight, Check, Wrench, Terminal } from "lucide-react";
 
 interface InquiryModalProps {
   isOpen: boolean;

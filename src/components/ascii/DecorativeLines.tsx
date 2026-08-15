@@ -80,29 +80,3 @@ export function DecorativePill({
   );
 }
 
-export function DecorativeSparkle({
-  className = "",
-  color = "currentColor",
-  size = 24,
-}: {
-  className?: string;
-  color?: string;
-  size?: number;
-}) {
-  return (
-    <svg
-      viewBox="0 0 30 30"
-      width={size}
-      height={size}
-      className={className}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M 15 1 L 18 12 L 29 15 L 18 18 L 15 29 L 12 18 L 1 15 L 12 12 Z"
-        fill={color}
-      />
-    </svg>
-  );
-}
