@@ -1,74 +1,40 @@
 "use client";
 
-import React, { useState } from "react";
-import { Navbar } from "@/components/navigation/Navbar";
-import { Hero } from "@/components/hero/Hero";
-import { TechStrip } from "@/components/technology-strip/TechStrip";
-import { Services } from "@/components/services/Services";
-import { VibeCodeRescue } from "@/components/vibe-code-rescue/VibeCodeRescue";
-import { Projects } from "@/components/projects/Projects";
-import { Process } from "@/components/process/Process";
-import { Metrics } from "@/components/metrics/Metrics";
-import { Testimonials } from "@/components/testimonials/Testimonials";
-import { FinalCTA } from "@/components/final-cta/FinalCTA";
-import { Footer } from "@/components/footer/Footer";
-import { InquiryModal } from "@/components/modal/InquiryModal";
+import { Scene } from "@/components/canvas/Scene";
+import { GridSidebar } from "@/components/ui/GridSidebar";
+import { CustomCursor } from "@/components/ui/CustomCursor";
+import { HeroTypography } from "@/components/ui/HeroTypography";
+import { ProjectTimeline } from "@/components/ui/ProjectTimeline";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 export default function Home() {
-  const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-  const [initialInquiryType, setInitialInquiryType] = useState<string | undefined>(undefined);
-
-  const handleOpenInquiry = (initialType?: string) => {
-    setInitialInquiryType(initialType);
-    setInquiryModalOpen(true);
-  };
-
-  const handleCloseInquiry = () => {
-    setInquiryModalOpen(false);
-    setInitialInquiryType(undefined);
-  };
-
   return (
-    <main className="min-h-screen bg-bone text-deep-ink selection:bg-petrol selection:text-bone">
-      {/* 01 Navigation */}
-      <Navbar onOpenInquiry={handleOpenInquiry} />
+    <main className="relative min-h-screen bg-bg text-fg font-mono overflow-x-hidden">
+      {/* 3D Canvas Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <Scene />
+      </div>
 
-      {/* 02 Hero Section */}
-      <Hero onOpenInquiry={handleOpenInquiry} />
+      {/* Scroll Progress Bar */}
+      <ScrollProgress />
 
-      {/* 03 Technology Strip */}
-      <TechStrip />
+      {/* Grid Sidebar Navigation */}
+      <GridSidebar />
 
-      {/* 04 Services Section */}
-      <Services onOpenInquiry={handleOpenInquiry} />
+      {/* Custom Cursor Trail */}
+      <CustomCursor />
 
-      {/* 05 Vibe-Code Rescue Feature */}
-      <VibeCodeRescue onOpenInquiry={handleOpenInquiry} />
+      {/* Hero Section */}
+      <HeroTypography />
 
-      {/* 06 Featured Work */}
-      <Projects onOpenInquiry={handleOpenInquiry} />
+      {/* Projects Timeline */}
+      <ProjectTimeline />
 
-      {/* 07 Process Section */}
-      <Process />
-
-      {/* 08 Metrics / Trust Section */}
-      <Metrics />
-
-      {/* 09 Testimonials Section */}
-      <Testimonials />
-
-      {/* 10 Final CTA */}
-      <FinalCTA onOpenInquiry={handleOpenInquiry} />
-
-      {/* 11 Footer */}
-      <Footer />
-
-      {/* 12 Interactive Project & Vibe-Rescue Inquiry Modal */}
-      <InquiryModal
-        isOpen={inquiryModalOpen}
-        onClose={handleCloseInquiry}
-        initialType={initialInquiryType}
-      />
+      {/* Additional Sections */}
+      <section id="asciiField" className="section-marker min-h-screen" />
+      <section id="morphBlob" className="section-marker min-h-screen" />
+      <section id="about" className="section-marker min-h-screen" />
+      <section id="contact" className="section-marker min-h-screen" />
     </main>
   );
 }

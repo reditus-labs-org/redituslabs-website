@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -24,33 +17,29 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "REDITUS — We Build What's Possible",
-  description:
-    "REDITUS is a technology engineering agency building websites, software, AI tools, AI pipelines and SaaS products — and transforming vibe-coded applications into production-ready software.",
+  title: "REDITUS — Tech Creative Agency",
+  description: "Next-gen technology creative agency. Brutalist-cyberpunk digital experiences. WebGL, Three.js, AI pipelines, custom software.",
   keywords: [
-    "software development agency",
-    "AI development agency",
-    "SaaS development",
-    "AI pipelines",
-    "AI tools development",
-    "web development agency",
-    "software engineering agency",
-    "vibe code rescue",
-    "AI application development",
+    "technology creative agency",
+    "WebGL development",
+    "Three.js agency",
+    "brutalist design",
+    "cyberpunk aesthetic",
+    "interactive 3D web",
     "custom software development",
+    "AI pipeline engineering",
   ],
   authors: [{ name: "REDITUS Agency" }],
   openGraph: {
-    title: "REDITUS — We Build What's Possible",
-    description:
-      "RETURN. REIMAGINE. REALIZE. We build digital products, software, AI tools and pipelines — and rescue vibe-coded apps into production software.",
+    title: "REDITUS — Tech Creative Agency",
+    description: "Next-gen technology creative agency. Brutalist-cyberpunk digital experiences.",
     type: "website",
     siteName: "REDITUS",
   },
   twitter: {
     card: "summary_large_image",
-    title: "REDITUS — We Build What's Possible",
-    description: "RETURN. REIMAGINE. REALIZE. Software & AI Engineering Studio.",
+    title: "REDITUS — Tech Creative Agency",
+    description: "Brutalist-cyberpunk digital experiences.",
   },
   robots: {
     index: true,
@@ -66,9 +55,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-bone text-deep-ink font-sans selection:bg-petrol selection:text-bone">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
+      <body className="min-h-full bg-bg text-fg font-mono selection:bg-fg selection:bg">
+        <div className="scanlines" aria-hidden="true" />
         {children}
       </body>
     </html>
