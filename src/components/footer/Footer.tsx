@@ -20,7 +20,7 @@ export function Footer() {
     <footer className="bg-deep-ink text-bone pt-16 pb-12 border-t border-graphite/40 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-graphite-border">
-          
+
           {/* Column 1: Brand & Tagline */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2">
@@ -31,7 +31,7 @@ export function Footer() {
                 REDITUS
               </span>
             </Link>
-            
+
             <p className="font-mono text-xs text-seafoam tracking-widest uppercase font-bold">
               RETURN. REIMAGINE. REALIZE.
             </p>

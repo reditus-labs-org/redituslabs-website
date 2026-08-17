@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { PROJECTS, ProjectItem } from "@/data/projects";
-import { ArrowRight, ArrowUpRight, CheckCircle, ExternalLink, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, X } from "lucide-react";
 import { ProjectDiagram } from "./ProjectDiagrams";
 
 interface ProjectsProps {
@@ -96,8 +96,8 @@ export function Projects({ onOpenInquiry }: ProjectsProps) {
                   {project.description}
                 </p>
 
-                {/* Technical Line-Art Diagram */}
-                <div className="bg-bone border border-graphite/10 p-2 mb-6 rounded-xs flex items-center justify-center">
+                {/* Project Isometric Illustration / Diagram */}
+                <div className="my-5 flex items-center justify-center relative w-full overflow-hidden">
                   <ProjectDiagram visualType={project.visualType} />
                 </div>
               </div>

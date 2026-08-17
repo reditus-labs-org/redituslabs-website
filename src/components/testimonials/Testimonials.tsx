@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { TESTIMONIALS } from "@/data/testimonials";
-import { Quote, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);

@@ -30,7 +30,7 @@ export const SERVICES: ServiceItem[] = [
     category: "SOFTWARE & APPS",
     title: "Software & Apps",
     description:
-      "Custom software applications built for performance, scalability and growth.",
+      "Custom software applications built for performance, scalability and growth with modern cloud enterprise architecture.",
     visualType: "stacked-blocks",
     features: [
       "Full-Stack Web & Mobile Applications",

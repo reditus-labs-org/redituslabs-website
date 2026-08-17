@@ -89,3 +89,52 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #066670;
 }
+
+/* Continuous Ticker Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Slide animations for Process Deck & Interactive Carousels */
+@keyframes processSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes processSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-process-slide-right {
+  animation: processSlideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-process-slide-left {
+  animation: processSlideInLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
