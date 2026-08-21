@@ -3,7 +3,9 @@
 import React, { useState } from "react";
 import { Navbar } from "@/components/navigation/Navbar";
 import { HeroSpotlight } from "@/components/hero/HeroSpotlight";
+import { TechMarqueeStrip } from "@/components/ui/TechMarqueeStrip";
 import { SolutionsBento } from "@/components/metrics/SolutionsBento";
+import { TechBlueprintSvg } from "@/components/ui/TechBlueprintSvg";
 import { PortfolioShowcase } from "@/components/projects/PortfolioShowcase";
 import { PricingGrid } from "@/components/pricing/PricingGrid";
 import { TestimonialSpotlight } from "@/components/testimonials/TestimonialSpotlight";
@@ -27,19 +29,25 @@ export default function Home() {
       {/* Section 1: Hero Stage & Floating Badges */}
       <HeroSpotlight onOpenInquiry={handleOpenInquiry} />
 
+      {/* GSAP Velocity-Modulated Tech Capability Marquee */}
+      <TechMarqueeStrip />
+
       {/* Section 2: Creative Solutions Stats Bento Grid */}
       <SolutionsBento />
 
-      {/* Section 3: Featured Work Showcase */}
+      {/* Section 3: Animated SVG System Blueprint Canvas */}
+      <TechBlueprintSvg />
+
+      {/* Section 4: Featured Work Showcase */}
       <PortfolioShowcase />
 
-      {/* Section 4: Flexible Pricing Retainer Tiers */}
+      {/* Section 5: Flexible Pricing Retainer Tiers */}
       <PricingGrid onOpenInquiry={handleOpenInquiry} />
 
-      {/* Section 5: Editorial Testimonials & Pixel Grid */}
+      {/* Section 6: Editorial Testimonials & Pixel Grid */}
       <TestimonialSpotlight />
 
-      {/* Section 6: Footer & Newsletter Conversion */}
+      {/* Section 7: Footer & Newsletter Conversion with Isometric Text */}
       <FooterNewsletter />
 
       {/* Global Interactive Project Inquiry Modal */}
