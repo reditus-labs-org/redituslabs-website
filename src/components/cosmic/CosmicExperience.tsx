@@ -98,7 +98,19 @@ export function CosmicExperience() {
   const [activeProject, setActiveProject] = useState(0);
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const universeRef = useRef<HTMLElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 26; // deg
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -26; // deg
+    setTilt({ x: y, y: x });
+  };
+
+  const handleMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
+  };
 
   const openInquiry = (type?: string) => {
     setInquiryType(type);
@@ -185,25 +197,54 @@ export function CosmicExperience() {
           </div>
         </div>
 
-        {/* Celestial Orbital System Visual */}
-        <div className={styles.planetSystem} aria-hidden="true">
-          <div className={styles.planetGlow} />
-          <div className={styles.orbitOuter}>
+        {/* 3D Cosmic "R" Monogram Visual (Using REDITUS Isometric Logo) */}
+        <div
+          className={styles.cosmicRSystem}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+            transition: tilt.x === 0 ? "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)" : "none",
+          }}
+          aria-label="REDITUS Isometric 3D Monogram Emblem"
+        >
+          {/* Luminous Glow Backdrop Halo */}
+          <div className={styles.rGlowHalo} />
+
+          {/* Concentric Orbital Rings */}
+          <div className={styles.rOrbitOuter}>
             <i />
             <i />
             <i />
           </div>
-          <div className={styles.orbitInner}>
+          <div className={styles.rOrbitInner}>
+            <i />
             <i />
           </div>
-          <div className={styles.planet}>
-            <div className={styles.planetLight} />
-            <div className={styles.planetShade} />
+
+          {/* 3D Core with REDITUS Logo PNG */}
+          <div className={styles.cosmicRCore}>
+            <div className={styles.rGridOverlay} />
+            <div className={styles.rScanBeam} />
+            <div className={styles.rEmblemWrapper}>
+              <img
+                src="/reditus-logo.png"
+                alt="REDITUS Isometric Monogram"
+                className={styles.reditusLogoPng}
+              />
+              <div className={styles.rEmblemGlowOverlay} />
+            </div>
           </div>
-          <div className={styles.planetLabel}>
-            <span>OBJ–R/01</span>
-            <i />
-            <span>STABLE ORBIT</span>
+
+          {/* Telemetry HUD Badge matching user image */}
+          <div className={styles.cosmicRLabel}>
+            <div className={styles.labelBeacon}>
+              <i />
+              <span>OBJ–R/01</span>
+            </div>
+            <div className={styles.labelReadout}>
+              <span>STABLE ORBIT</span>
+            </div>
           </div>
         </div>
 
