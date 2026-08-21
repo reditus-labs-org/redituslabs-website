@@ -76,8 +76,8 @@ export function VibeCodeRescue({ onOpenInquiry }: VibeCodeRescueProps) {
                   <button
                     onClick={() => setActiveTab("prototype")}
                     className={`px-3 py-1.5 font-mono text-[11px] font-bold transition-all cursor-pointer ${activeTab === "prototype"
-                        ? "bg-brass/20 text-brass border border-brass/50"
-                        : "text-bone/50 hover:text-bone"
+                      ? "bg-brass/20 text-brass border border-brass/50"
+                      : "text-bone/50 hover:text-bone"
                       }`}
                   >
                     01. PROTOTYPE (FRAGILE)
@@ -85,8 +85,8 @@ export function VibeCodeRescue({ onOpenInquiry }: VibeCodeRescueProps) {
                   <button
                     onClick={() => setActiveTab("engineered")}
                     className={`px-3 py-1.5 font-mono text-[11px] font-bold transition-all cursor-pointer ${activeTab === "engineered"
-                        ? "bg-seafoam/20 text-seafoam border border-seafoam/50"
-                        : "text-bone/50 hover:text-bone"
+                      ? "bg-seafoam/20 text-seafoam border border-seafoam/50"
+                      : "text-bone/50 hover:text-bone"
                       }`}
                   >
                     02. RE-ENGINEERED (LIVE)

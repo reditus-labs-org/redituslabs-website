@@ -66,11 +66,10 @@ export function Hero({ onOpenInquiry }: HeroProps) {
                   <button
                     key={p.id}
                     onClick={() => setActivePhase(p.id)}
-                    className={`px-3 py-1.5 border transition-all duration-200 cursor-pointer flex items-center gap-2 ${
-                      activePhase === p.id
+                    className={`px-3 py-1.5 border transition-all duration-200 cursor-pointer flex items-center gap-2 ${activePhase === p.id
                         ? "bg-graphite text-seafoam border-petrol shadow-sm"
                         : "bg-bone-card text-graphite-muted border-graphite/20 hover:border-petrol/50"
-                    }`}
+                      }`}
                   >
                     <span>{p.label}</span>
                     {activePhase === p.id && <span className="w-1.5 h-1.5 bg-seafoam animate-pulse" />}

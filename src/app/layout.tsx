@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono, Pixelify_Sans, Syne } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono, Outfit, Syne } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -9,48 +9,62 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-const pixelifySans = Pixelify_Sans({
-  variable: "--font-pixelify",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin"],
-  weight: ["700", "800"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "REDITUS — Tech Creative Agency",
-  description: "Next-gen technology creative agency. WebGL, Three.js, AI pipelines, custom software.",
+  title: "REDITUS — We Build What's Possible",
+  description:
+    "REDITUS is a technology engineering agency building websites, software, AI tools, AI pipelines and SaaS products — and transforming vibe-coded applications into production-ready software.",
   keywords: [
-    "technology creative agency",
-    "WebGL development",
-    "Three.js agency",
+    "software development agency",
+    "AI development agency",
+    "SaaS development",
+    "AI pipelines",
+    "AI tools development",
+    "web development agency",
+    "software engineering agency",
+    "vibe code rescue",
+    "AI application development",
     "custom software development",
-    "AI pipeline engineering",
   ],
   authors: [{ name: "REDITUS Agency" }],
   openGraph: {
-    title: "REDITUS — Tech Creative Agency",
-    description: "Next-gen technology creative agency.",
+    title: "REDITUS — We Build What's Possible",
+    description:
+      "RETURN. REIMAGINE. REALIZE. We build digital products, software, AI tools and pipelines — and rescue vibe-coded apps into production software.",
     type: "website",
     siteName: "REDITUS",
   },
   twitter: {
     card: "summary_large_image",
-    title: "REDITUS — Tech Creative Agency",
-    description: "Next-gen technology creative agency.",
+    title: "REDITUS — We Build What's Possible",
+    description: "RETURN. REIMAGINE. REALIZE. Software & AI Engineering Studio.",
   },
   robots: {
     index: true,
@@ -66,13 +80,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${pixelifySans.variable} ${syne.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} ${outfit.variable} ${syne.variable} h-full antialiased`}
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
-      <body className="min-h-full bg-[#0B1114] text-[#F1EDE3] font-display selection:bg-[#087F8C] selection:text-[#F1EDE3]">
+      <body className="min-h-full flex flex-col bg-bone text-deep-ink font-sans selection:bg-petrol selection:text-bone">
         {children}
       </body>
     </html>

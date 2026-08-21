@@ -60,8 +60,8 @@ export function InquiryModal({ isOpen, onClose, initialType }: InquiryModalProps
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-deep-ink/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-bone border border-petrol max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative my-8 animate-in fade-in zoom-in duration-200">
+    <div className="cosmic-modal-shell fixed inset-0 z-50 bg-deep-ink/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+      <div className="cosmic-modal-panel bg-bone border border-petrol max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative my-8 animate-in fade-in zoom-in duration-200">
         
         {/* Close Button */}
         <button
