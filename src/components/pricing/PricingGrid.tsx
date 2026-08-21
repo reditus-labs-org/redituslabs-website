@@ -18,7 +18,7 @@ export function PricingGrid({ onOpenInquiry }: PricingGridProps) {
             <span>TRANSPARENT SPRINT RETAINERS</span>
           </div>
 
-          <h2 className="text-4xl sm:text-6xl font-display font-extrabold tracking-tight uppercase leading-[0.92] text-[#0B1114] mb-6">
+          <h2 className="text-4xl sm:text-6xl font-pixel font-bold tracking-tight uppercase leading-[0.92] text-[#0B1114] mb-6">
             FLEXIBLE PRICING FOR <br />
             <span className="text-[#087F8C]">CREATIVE SOLUTIONS</span>
           </h2>

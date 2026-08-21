@@ -86,7 +86,7 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
 
         <h1
           ref={headlineRef}
-          className="hero-anim-text text-5xl sm:text-7xl md:text-8xl font-display font-extrabold tracking-tight uppercase leading-[0.9] mb-6 text-white"
+          className="hero-anim-text text-5xl sm:text-7xl md:text-8xl font-pixel font-bold tracking-tight uppercase leading-[0.92] mb-6 text-white"
         >
           IDEAS MEET <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F1EDE3] via-[#A8E6CF] to-[#087F8C]">

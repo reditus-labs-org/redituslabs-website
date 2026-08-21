@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono, Pixelify_Sans, Syne } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -16,30 +16,41 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const pixelifySans = Pixelify_Sans({
+  variable: "--font-pixelify",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const syne = Syne({
+  variable: "--font-syne",
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "REDITUS — Tech Creative Agency",
-  description: "Next-gen technology creative agency. Brutalist-cyberpunk digital experiences. WebGL, Three.js, AI pipelines, custom software.",
+  description: "Next-gen technology creative agency. WebGL, Three.js, AI pipelines, custom software.",
   keywords: [
     "technology creative agency",
     "WebGL development",
     "Three.js agency",
-    "brutalist design",
-    "cyberpunk aesthetic",
-    "interactive 3D web",
     "custom software development",
     "AI pipeline engineering",
   ],
   authors: [{ name: "REDITUS Agency" }],
   openGraph: {
     title: "REDITUS — Tech Creative Agency",
-    description: "Next-gen technology creative agency. Brutalist-cyberpunk digital experiences.",
+    description: "Next-gen technology creative agency.",
     type: "website",
     siteName: "REDITUS",
   },
   twitter: {
     card: "summary_large_image",
     title: "REDITUS — Tech Creative Agency",
-    description: "Brutalist-cyberpunk digital experiences.",
+    description: "Next-gen technology creative agency.",
   },
   robots: {
     index: true,
@@ -55,14 +66,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${pixelifySans.variable} ${syne.variable} h-full antialiased`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-full bg-bg text-fg font-mono selection:bg-fg selection:bg">
-        <div className="scanlines" aria-hidden="true" />
+      <body className="min-h-full bg-[#0B1114] text-[#F1EDE3] font-display selection:bg-[#087F8C] selection:text-[#F1EDE3]">
         {children}
       </body>
     </html>

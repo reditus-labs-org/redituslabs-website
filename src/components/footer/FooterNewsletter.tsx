@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, Send, Check } from "lucide-react";
+import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { ReditusLogo } from "@/components/ui/ReditusLogo";
 
 export function FooterNewsletter() {
@@ -14,117 +14,126 @@ export function FooterNewsletter() {
     setSubscribed(true);
     setTimeout(() => {
       setEmail("");
-    }, 2000);
+    }, 2500);
   };
 
   return (
-    <footer id="contact" className="py-20 bg-[#0B1114] text-[#F1EDE3] border-t border-[#242C30] relative overflow-hidden">
+    <footer id="contact" className="pt-24 pb-12 bg-[#0B1114] text-[#F1EDE3] border-t border-[#242C30] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Header Banner & Studio Contact Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-[#242C30]">
-          <div className="lg:col-span-8">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight uppercase leading-[0.95] text-white">
-              SMART STRATEGY AND CREATIVE <br />
-              <span className="text-[#087F8C]">DESIGN CRAFTED</span> TO BRING YOUR <br />
-              BRAND VISION TO LIFE
-            </h2>
-          </div>
-
-          <div className="lg:col-span-4 flex flex-col justify-end font-mono text-xs text-[#F1EDE3]/80 space-y-2">
-            <a href="mailto:hello@reditus.agency" className="hover:text-[#A8E6CF] transition-colors font-bold text-sm">
-              HELLO@REDITUS.AGENCY
-            </a>
-            <p>(+1) 800-455-800</p>
-            <p className="text-[#A8E6CF]">NEW YORK • LONDON • SINGAPORE</p>
-          </div>
-        </div>
-
-        {/* Links Columns & Newsletter Signup */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 py-16 border-b border-[#242C30]">
-          {/* Brand Info */}
-          <div className="md:col-span-3">
-            <ReditusLogo size="md" />
-            <p className="font-mono text-xs text-[#F1EDE3]/60 mt-4 leading-relaxed">
-              REDITUS is a high-performance software engineering agency building production web apps, AI tools, and scalable digital products.
-            </p>
-          </div>
-
-          {/* Column 1: Services */}
-          <div className="md:col-span-2">
-            <h3 className="font-mono text-xs font-bold text-[#A8E6CF] tracking-widest uppercase mb-4">
-              SERVICES
-            </h3>
-            <ul className="space-y-2.5 font-mono text-xs text-[#F1EDE3]/70">
-              <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">BRANDING STRATEGY</a></li>
-              <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">WEB DESIGN</a></li>
-              <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">WEB DEVELOPMENT</a></li>
-              <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">AI PIPELINES</a></li>
-              <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">PRODUCT DESIGN</a></li>
-            </ul>
-          </div>
-
-          {/* Column 2: Support */}
-          <div className="md:col-span-2">
-            <h3 className="font-mono text-xs font-bold text-[#A8E6CF] tracking-widest uppercase mb-4">
-              SUPPORT
-            </h3>
-            <ul className="space-y-2.5 font-mono text-xs text-[#F1EDE3]/70">
-              <li><a href="#contact" className="hover:text-[#A8E6CF] transition-colors">CONTACT US</a></li>
-              <li><a href="#pricing" className="hover:text-[#A8E6CF] transition-colors">PRICING & PACKAGES</a></li>
-              <li><a href="/terms" className="hover:text-[#A8E6CF] transition-colors">TERMS & POLICIES</a></li>
-              <li><a href="/privacy" className="hover:text-[#A8E6CF] transition-colors">PRIVACY POLICY</a></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Newsletter Box */}
-          <div className="md:col-span-5">
-            <div className="p-6 rounded-3xl bg-[#12191d] border border-[#242C30]">
-              <h3 className="font-display font-extrabold text-xl uppercase tracking-tight text-white mb-2">
-                JOIN THE LIST
-              </h3>
-              <p className="font-mono text-xs text-[#F1EDE3]/70 mb-6">
-                SIGN UP TO GET THE LATEST INSIGHTS, CASE STUDIES AND UPDATES FROM OUR DIGITAL AGENCY.
+        
+        {/* Top Row: Experience Slogan & Navigation Columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-20 border-b border-[#242C30]/50">
+          
+          {/* Left Column: Slogan & Newsletter */}
+          <div className="lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#12191d] text-[#A8E6CF] text-xs font-mono tracking-wider mb-6 border border-[#A8E6CF]/20">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>REDITUS LABS</span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight uppercase leading-tight mb-4">
+                EXPERIENCE THE RETURN <br />
+                OF <span className="text-[#087F8C]">WHAT&apos;S POSSIBLE</span>
+              </h2>
+              <p className="font-mono text-xs text-[#F1EDE3]/70 max-w-md leading-relaxed mb-8">
+                Building scalable web apps, custom software architecture, AI pipelines, and high-performance digital products for modern enterprises.
               </p>
+            </div>
 
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+            {/* Newsletter Subscription Bar */}
+            <div className="p-4 rounded-2xl bg-[#12191d] border border-[#242C30] max-w-md">
+              <form onSubmit={handleSubmit} className="flex gap-2">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="YOUR EMAIL"
+                  placeholder="Enter work email..."
                   required
-                  className="flex-grow px-4 py-3 rounded-full bg-[#0B1114] border border-[#242C30] text-[#F1EDE3] placeholder-[#F1EDE3]/40 font-mono text-xs focus:outline-none focus:border-[#087F8C]"
+                  className="flex-grow px-4 py-2.5 rounded-xl bg-[#0B1114] border border-[#242C30] text-[#F1EDE3] placeholder-[#F1EDE3]/40 font-mono text-xs focus:outline-none focus:border-[#087F8C]"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-full bg-[#087F8C] hover:bg-[#066670] text-[#F1EDE3] font-display text-xs font-bold tracking-wider uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer border border-[#A8E6CF]/30 shrink-0"
+                  className="px-5 py-2.5 rounded-xl bg-[#087F8C] hover:bg-[#066670] text-[#F1EDE3] font-display text-xs font-bold tracking-wider uppercase transition-colors flex items-center gap-2 cursor-pointer border border-[#A8E6CF]/30 shrink-0"
                 >
                   {subscribed ? (
-                    <>
-                      <span>SUBSCRIBED</span>
-                      <Check className="w-4 h-4 text-[#A8E6CF]" />
-                    </>
+                    <Check className="w-4 h-4 text-[#A8E6CF]" />
                   ) : (
                     <>
-                      <span>SUBSCRIBE</span>
-                      <ArrowRight className="w-4 h-4 text-[#A8E6CF]" />
+                      <span>JOIN</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#A8E6CF]" />
                     </>
                   )}
                 </button>
               </form>
             </div>
           </div>
+
+          {/* Right Columns: Product & Resources */}
+          <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-8">
+            {/* Column 1: Services */}
+            <div>
+              <h3 className="font-mono text-xs font-bold text-[#A8E6CF] tracking-widest uppercase mb-4">
+                SERVICES
+              </h3>
+              <ul className="space-y-3 font-mono text-xs text-[#F1EDE3]/70">
+                <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">Web Applications</a></li>
+                <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">Product Design</a></li>
+                <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">AI Pipelines &amp; Agents</a></li>
+                <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">Vibe-Code Rescue</a></li>
+                <li><a href="#solutions" className="hover:text-[#A8E6CF] transition-colors">SaaS Platforms</a></li>
+              </ul>
+            </div>
+
+            {/* Column 2: Resources */}
+            <div>
+              <h3 className="font-mono text-xs font-bold text-[#A8E6CF] tracking-widest uppercase mb-4">
+                RESOURCES
+              </h3>
+              <ul className="space-y-3 font-mono text-xs text-[#F1EDE3]/70">
+                <li><a href="#work" className="hover:text-[#A8E6CF] transition-colors">Case Studies</a></li>
+                <li><a href="#pricing" className="hover:text-[#A8E6CF] transition-colors">Retainers &amp; Pricing</a></li>
+                <li><a href="#reviews" className="hover:text-[#A8E6CF] transition-colors">Client Reviews</a></li>
+                <li><a href="/terms" className="hover:text-[#A8E6CF] transition-colors">Engineering Docs</a></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Contact Info */}
+            <div className="col-span-2 sm:col-span-1">
+              <h3 className="font-mono text-xs font-bold text-[#B99A5B] tracking-widest uppercase mb-4">
+                CONTACT
+              </h3>
+              <div className="space-y-3 font-mono text-xs text-[#F1EDE3]/70">
+                <a href="mailto:hello@reditus.agency" className="block text-[#A8E6CF] hover:underline font-bold">
+                  hello@reditus.agency
+                </a>
+                <p>(+1) 800-455-800</p>
+                <p className="text-[10px] text-[#F1EDE3]/50">NEW YORK • SINGAPORE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Centerpiece: MASSIVE Creative Full-Width "Reditus Labs" Typography */}
+        <div className="py-12 text-center overflow-hidden border-b border-[#242C30]/50 select-none group">
+          <h1 className="text-[14vw] sm:text-[15vw] leading-none font-pixel font-bold tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#F1EDE3] via-[#F1EDE3]/90 to-[#087F8C]/60 hover:from-[#A8E6CF] hover:to-[#087F8C] transition-all duration-700 transform group-hover:scale-[1.01] drop-shadow-[0_10px_30px_rgba(8,127,140,0.2)]">
+            Reditus Labs
+          </h1>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#F1EDE3]/50">
-          <div>© {new Date().getFullYear()} REDITUS AGENCY. ALL RIGHTS RESERVED</div>
+          <div className="flex items-center gap-3">
+            <ReditusLogo size="sm" />
+            <span>© {new Date().getFullYear()} REDITUS LABS. ALL RIGHTS RESERVED</span>
+          </div>
+
           <div className="flex items-center gap-6">
-            <a href="/terms" className="hover:text-[#A8E6CF] transition-colors">TERMS & CONDITIONS</a>
+            <a href="/terms" className="hover:text-[#A8E6CF] transition-colors">TERMS &amp; CONDITIONS</a>
             <span>|</span>
             <a href="/privacy" className="hover:text-[#A8E6CF] transition-colors">PRIVACY POLICY</a>
           </div>
         </div>
+
       </div>
     </footer>
   );

@@ -74,7 +74,7 @@ export function PortfolioShowcase() {
               <span>FEATURED WORK & CASE STUDIES</span>
             </div>
 
-            <h2 className="text-4xl sm:text-6xl font-display font-extrabold tracking-tight uppercase leading-[0.95] text-white">
+            <h2 className="text-4xl sm:text-6xl font-pixel font-bold tracking-tight uppercase leading-[0.95] text-white">
               BUILDING THE FUTURE OF <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A8E6CF] to-[#087F8C]">
                 CONSUMER BRANDS & SYSTEMS

@@ -17,6 +17,8 @@
 
   --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
   --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --font-pixel: var(--font-pixelify), "Pixelify Sans", cursive, sans-serif;
+  --font-syne: var(--font-syne), "Syne", sans-serif;
 }
 
 :root {
@@ -41,6 +43,16 @@ body {
   color: #F1EDE3;
   font-family: var(--font-display);
   overflow-x: hidden;
+}
+
+/* Custom Pixel Font Utility Classes */
+.font-pixel {
+  font-family: var(--font-pixelify), "Pixelify Sans", monospace, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.font-syne {
+  font-family: var(--font-syne), "Syne", sans-serif;
 }
 
 ::selection {
