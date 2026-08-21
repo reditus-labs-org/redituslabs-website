@@ -7,14 +7,10 @@ import {
   ArrowRight,
   Check,
   ChevronRight,
-  CircleDot,
   Code2,
   Database,
-  Orbit,
   Radio,
-  Sparkles,
   Terminal,
-  ShieldCheck,
   Cpu,
 } from "lucide-react";
 import { Navbar } from "@/components/navigation/Navbar";
@@ -98,6 +94,8 @@ export function CosmicExperience() {
   const [activeProject, setActiveProject] = useState(0);
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const [activeSat, setActiveSat] = useState<string | null>(null);
   const universeRef = useRef<HTMLElement>(null);
 
   const openInquiry = (type?: string) => {
@@ -123,6 +121,17 @@ export function CosmicExperience() {
     return () => observer.disconnect();
   }, []);
 
+  const handleHeroMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setRotate({ x: y * -16, y: x * 18 });
+  };
+
+  const handleHeroMouseLeave = () => {
+    setRotate({ x: 0, y: 0 });
+  };
+
   const handleNewsletter = (event: React.FormEvent) => {
     event.preventDefault();
     if (!email) return;
@@ -146,7 +155,12 @@ export function CosmicExperience() {
       <Navbar onOpenInquiry={openInquiry} />
 
       {/* 01. HERO / COMMAND VIEWPORT */}
-      <section id="hero" className={styles.hero}>
+      <section
+        id="hero"
+        className={styles.hero}
+        onMouseMove={handleHeroMouseMove}
+        onMouseLeave={handleHeroMouseLeave}
+      >
         <div className={styles.heroMeta}>
           <span>SECTOR 07 // DIGITAL OBSERVER</span>
           <span className={styles.online}>
@@ -185,25 +199,95 @@ export function CosmicExperience() {
           </div>
         </div>
 
-        {/* Celestial Orbital System Visual */}
-        <div className={styles.planetSystem} aria-hidden="true">
+        {/* Interactive 3D Holographic Celestial Orbital Core */}
+        <div
+          className={styles.planetSystem}
+          style={{
+            transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+            transition: "transform 0.15s cubic-bezier(0.1, 0.5, 0.1, 1)",
+          }}
+        >
           <div className={styles.planetGlow} />
-          <div className={styles.orbitOuter}>
-            <i />
-            <i />
-            <i />
+
+          {/* Orbit Ring 1: Equatorial */}
+          <div className={styles.orbitRingOuter}>
+            <button
+              type="button"
+              className={`${styles.satelliteNode} ${styles.sat1}`}
+              onMouseEnter={() => setActiveSat("SAT-01")}
+              onMouseLeave={() => setActiveSat(null)}
+              aria-label="Satellite 1: Software Architecture"
+            >
+              <i />
+              <span className={styles.satTag}>SAT-01</span>
+              {activeSat === "SAT-01" && (
+                <div className={styles.satTooltip}>
+                  <strong>SOFTWARE ARCHITECTURE</strong>
+                  <small>Status: Scalable &amp; Production-Ready</small>
+                </div>
+              )}
+            </button>
           </div>
-          <div className={styles.orbitInner}>
-            <i />
+
+          {/* Orbit Ring 2: Polar Inclined */}
+          <div className={styles.orbitRingMiddle}>
+            <button
+              type="button"
+              className={`${styles.satelliteNode} ${styles.sat2}`}
+              onMouseEnter={() => setActiveSat("SAT-02")}
+              onMouseLeave={() => setActiveSat(null)}
+              aria-label="Satellite 2: AI Pipelines"
+            >
+              <i />
+              <span className={styles.satTag}>SAT-02</span>
+              {activeSat === "SAT-02" && (
+                <div className={styles.satTooltip}>
+                  <strong>AI &amp; DATA PIPELINES</strong>
+                  <small>Status: High Throughput / LLMs</small>
+                </div>
+              )}
+            </button>
           </div>
+
+          {/* Orbit Ring 3: Counter Inner */}
+          <div className={styles.orbitRingInner}>
+            <button
+              type="button"
+              className={`${styles.satelliteNode} ${styles.sat3}`}
+              onMouseEnter={() => setActiveSat("SAT-03")}
+              onMouseLeave={() => setActiveSat(null)}
+              aria-label="Satellite 3: Vibe Code Rescue"
+            >
+              <i />
+              <span className={styles.satTag}>SAT-03</span>
+              {activeSat === "SAT-03" && (
+                <div className={styles.satTooltip}>
+                  <strong>VIBE CODE RESCUE</strong>
+                  <small>Status: Enterprise Hardening</small>
+                </div>
+              )}
+            </button>
+          </div>
+
+          {/* Multi-layered Planetary Core Visual */}
           <div className={styles.planet}>
+            <div className={styles.globeGridLines} />
+            <div className={styles.auroraWave} />
             <div className={styles.planetLight} />
             <div className={styles.planetShade} />
+            <div className={styles.equatorHalo} />
           </div>
+
+          {/* Telemetry Readout Badge */}
           <div className={styles.planetLabel}>
-            <span>OBJ–R/01</span>
-            <i />
-            <span>STABLE ORBIT</span>
+            <div className={styles.labelBeacon}>
+              <i />
+              <span>OBJ–R/01 · STABLE ORBIT</span>
+            </div>
+            <div className={styles.labelReadout}>
+              <span>ALT: 420 KM</span>
+              <span>VEL: 7.66 KM/S</span>
+            </div>
           </div>
         </div>
 
@@ -248,7 +332,7 @@ export function CosmicExperience() {
       <div className={styles.signalStrip} aria-label="Technology stack">
         <div className={styles.signalTrack}>
           {[...TECHNOLOGIES, ...TECHNOLOGIES].map((tech, index) => (
-            <span key={`${tech.id}-${index}`}>
+            <span key={`${tech.name}-${index}`}>
               <i />
               {tech.name}
               <small>{tech.category}</small>
@@ -257,14 +341,11 @@ export function CosmicExperience() {
         </div>
       </div>
 
-      {/* 02. CAPABILITY SECTORS (SERVICES) */}
-      <section
-        id="services"
-        className={`${styles.section} ${styles.capabilities}`}
-      >
+      {/* 02. CAPABILITIES / SERVICES */}
+      <section id="services" className={styles.section}>
         <div className={styles.sectionHead}>
           <div>
-            <SectionLabel index="01">CAPABILITY SECTORS</SectionLabel>
+            <SectionLabel index="01">SYSTEM CAPABILITIES</SectionLabel>
             <h2 className={`${styles.sectionTitle} ${styles.reveal}`}>
               Built for the
               <br />
@@ -272,33 +353,28 @@ export function CosmicExperience() {
             </h2>
           </div>
           <p className={`${styles.sectionIntro} ${styles.reveal}`}>
-            We fuse product architecture with serious engineering—giving every
-            idea the intelligence, systems, and craft required for orbit.
+            We bridge the gap between ambitious vision and bulletproof software
+            architecture. Every system is built to scale smoothly under heavy load.
           </p>
         </div>
 
         <div className={styles.serviceGrid}>
           {SERVICES.map((service, index) => (
-            <article
+            <div
               key={service.id}
               className={`${styles.serviceCard} ${styles.reveal}`}
             >
               <div className={styles.cardTop}>
-                <span>SEC–{service.number}</span>
-                <CircleDot size={15} />
+                <span>MODULE 0{index + 1}</span>
+                <span>{service.id.toUpperCase()}</span>
               </div>
 
-              <div className={styles.serviceGlyph} aria-hidden="true">
+              <div className={styles.serviceGlyph}>
                 <span>
-                  {index === 0 ? (
-                    <Code2 />
-                  ) : index === 1 ? (
-                    <Database />
-                  ) : index === 2 ? (
-                    <Sparkles />
-                  ) : (
-                    <Orbit />
-                  )}
+                  {index === 0 && <Code2 />}
+                  {index === 1 && <Cpu />}
+                  {index === 2 && <Database />}
+                  {index === 3 && <Terminal />}
                 </span>
                 <i />
                 <i />
@@ -308,79 +384,81 @@ export function CosmicExperience() {
               <p>{service.description}</p>
 
               <ul>
-                {service.features.map((feature) => (
-                  <li key={feature}>
-                    <ChevronRight size={11} />
-                    {feature}
+                {service.features.map((item: string) => (
+                  <li key={item}>
+                    <Check size={14} />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
-            </article>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* 03. VIBE CODE RESCUE */}
-      <section
-        id="vibe-rescue"
-        className={`${styles.rescue} ${styles.section}`}
-      >
-        <div className={styles.rescueVisual} aria-hidden="true">
-          <div className={styles.scanLine} />
-          <div className={styles.brokenCore}>
-            <span>!</span>
+      {/* 03. MISSION RECOVERY (VIBE RESCUE) */}
+      <section id="rescue" className={styles.section}>
+        <div className={styles.rescue}>
+          <div className={`${styles.rescueVisual} ${styles.reveal}`}>
+            <div className={styles.brokenCore}>
+              <span>!</span>
+            </div>
+            <div className={styles.rescueOrbit}>
+              <i />
+              <i />
+              <i />
+            </div>
+            <div className={styles.scanLine} />
+            <div className={styles.visualCode}>SYS_DIAG // ERROR: UNSTABLE</div>
+            <div className={styles.visualStatus}>RECOVERY SEQUENCE READY</div>
           </div>
-          <div className={styles.rescueOrbit}>
-            <i />
-            <i />
-            <i />
-          </div>
-          <span className={styles.visualCode}>
-            ERR_04 / STRUCTURAL INSTABILITY
-          </span>
-          <span className={styles.visualStatus}>
-            RECONSTRUCTION PATH: READY
-          </span>
-        </div>
 
-        <div className={styles.rescueCopy}>
-          <SectionLabel index="02">MISSION RECOVERY</SectionLabel>
-          <h2 className={`${styles.sectionTitle} ${styles.reveal}`}>
-            Your prototype
-            <br />
-            isn&apos;t a dead end.
-          </h2>
-          <p className={styles.rescueLead}>
-            We turn vibe-coded applications and fragile MVPs into secure,
-            type-safe, production-ready software.
-          </p>
+          <div className={styles.rescueCopy}>
+            <SectionLabel index="02">VIBE CODE RESCUE</SectionLabel>
 
-          <div className={styles.diagnostics}>
-            {[
-              "Architecture & schema audit",
-              "Security & auth hardening",
-              "Latency & query optimization",
-              "Zero-downtime deployment",
-            ].map((item, i) => (
-              <div key={item}>
-                <span>0{i + 1}</span>
-                <p>{item}</p>
-                <strong>VERIFIED</strong>
+            <h2 className={`${styles.sectionTitle} ${styles.reveal}`}>
+              We fix fragile
+              <br />
+              <em>prototypes.</em>
+            </h2>
+
+            <p className={`${styles.rescueLead} ${styles.reveal}`}>
+              Built a fast prototype with AI or low-code tools that is now slowing down
+              or breaking under load? We audit, clean up, and rebuild your application
+              into production-ready software.
+            </p>
+
+            <div className={`${styles.diagnostics} ${styles.reveal}`}>
+              <div>
+                <span>01</span>
+                <p>Architecture &amp; State Audit</p>
+                <strong>COMPLETE</strong>
               </div>
-            ))}
-          </div>
+              <div>
+                <span>02</span>
+                <p>Security &amp; API Hardening</p>
+                <strong>COMPLETE</strong>
+              </div>
+              <div>
+                <span>03</span>
+                <p>Database &amp; Pipeline Scale</p>
+                <strong>COMPLETE</strong>
+              </div>
+            </div>
 
-          <button
-            className={styles.outlineButton}
-            onClick={() => openInquiry("vibe-rescue")}
-          >
-            Request a rescue audit <ArrowRight size={15} />
-          </button>
+            <button
+              className={styles.primaryButton}
+              onClick={() => openInquiry("Vibe Code Rescue")}
+            >
+              <span>Request System Audit</span>
+              <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* 04. FLIGHT RECORD (PROJECTS / CASE STUDIES) */}
-      <section id="work" className={`${styles.section} ${styles.work}`}>
+      {/* 04. FLIGHT RECORD (WORK / PROJECTS) */}
+      <section id="work" className={styles.section}>
         <div className={styles.sectionHead}>
           <div>
             <SectionLabel index="03">FLIGHT RECORD</SectionLabel>
@@ -396,22 +474,22 @@ export function CosmicExperience() {
         </div>
 
         <div className={styles.missionPanel}>
-          <nav className={styles.missionNav} aria-label="Select case study">
-            {PROJECTS.map((item, index) => (
+          <div className={styles.missionNav}>
+            {PROJECTS.map((proj, idx) => (
               <button
-                key={item.id}
-                onClick={() => setActiveProject(index)}
-                className={activeProject === index ? styles.activeMission : ""}
+                key={proj.id}
+                className={idx === activeProject ? styles.activeMission : ""}
+                onClick={() => setActiveProject(idx)}
               >
-                <span>0{index + 1}</span>
-                <strong>{item.title}</strong>
-                <small>{item.tag}</small>
-                <ArrowRight size={14} />
+                <span>0{idx + 1}</span>
+                <strong>{proj.title}</strong>
+                <small>{proj.category}</small>
+                <ChevronRight size={16} />
               </button>
             ))}
-          </nav>
+          </div>
 
-          <article key={project.id} className={styles.missionDetail}>
+          <div className={styles.missionDetail}>
             <div className={styles.missionVisual}>
               <div className={styles.radar}>
                 <i />
@@ -420,48 +498,45 @@ export function CosmicExperience() {
                 <i />
                 <span />
               </div>
-              <span className={styles.radarLabel}>
-                {project.category}
+              <div className={styles.radarLabel}>
+                BEACON LOG: {project.id.toUpperCase()}
                 <br />
-                LIVE SYSTEM
-              </span>
+                STATUS: DEPLOYED TO PRODUCTION
+              </div>
             </div>
 
             <div className={styles.missionCopy}>
-              <span className={styles.sectionLabel}>
-                {project.tag} / CASE STUDY
-              </span>
               <h3>{project.title}</h3>
-              <p className={styles.missionDescription}>
-                {project.description}
-              </p>
+              <p className={styles.missionDescription}>{project.description}</p>
 
               <div className={styles.challenge}>
-                <span>MISSION BRIEF</span>
+                <span>CHALLENGE</span>
                 <p>{project.challenge}</p>
               </div>
 
               <div className={styles.solution}>
-                <span>ENGINEERED RESPONSE</span>
+                <span>SOLUTION</span>
                 <p>{project.solution}</p>
               </div>
 
-              <div className={styles.metrics}>
-                {project.metrics?.map((metric) => (
-                  <div key={metric.label}>
-                    <strong>{metric.value}</strong>
-                    <span>{metric.label}</span>
-                  </div>
-                ))}
-              </div>
+              {project.metrics && project.metrics.length > 0 && (
+                <div className={styles.metrics}>
+                  {project.metrics.map((m) => (
+                    <div key={m.label}>
+                      <strong>{m.value}</strong>
+                      <span>{m.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className={styles.stack}>
-                {project.techStack.map((tech) => (
-                  <span key={tech}>{tech}</span>
+                {project.techStack.map((t: string) => (
+                  <span key={t}>{t}</span>
                 ))}
               </div>
             </div>
-          </article>
+          </div>
         </div>
       </section>
 
@@ -472,38 +547,40 @@ export function CosmicExperience() {
           <h2 className={`${styles.sectionTitle} ${styles.reveal}`}>
             From first signal
             <br />
-            to stable orbit.
+            <em>to stable orbit.</em>
           </h2>
-          <p>
-            No black boxes. A disciplined trajectory from technical audit to a
-            resilient production deployment.
+          <p className={`${styles.reveal}`}>
+            A structured, transparent engineering process designed to keep speed high
+            and risks low.
           </p>
         </div>
 
         <div className={styles.trajectory}>
           <div className={styles.trajectoryLine} />
+
           {PROCESS_STEPS.map((step) => (
-            <article
-              key={step.number}
-              className={`${styles.processStep} ${styles.reveal}`}
-            >
+            <div key={step.number} className={styles.processStep}>
               <div className={styles.processNode}>
                 <span>{step.number}</span>
               </div>
-              <div className={styles.processCard}>
-                <span>{step.subtitle}</span>
+
+              <div className={`${styles.processCard} ${styles.reveal}`}>
+                <span>PHASE {step.number}</span>
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
-                <small>OUTPUT / {step.outputArtifact}</small>
+                <small>OUTPUT: {step.outputArtifact}</small>
               </div>
-              <div className={styles.benchmark}>{step.benchmarkTarget}</div>
-            </article>
+
+              <div className={styles.benchmark}>
+                <span>{step.benchmarkTarget}</span>
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
       {/* 06. ENGAGEMENT ORBITS (PRICING) */}
-      <section id="pricing" className={`${styles.section} ${styles.pricing}`}>
+      <section id="pricing" className={styles.section}>
         <div className={styles.sectionHead}>
           <div>
             <SectionLabel index="05">ENGAGEMENT ORBITS</SectionLabel>
@@ -514,27 +591,29 @@ export function CosmicExperience() {
             </h2>
           </div>
           <p className={`${styles.sectionIntro} ${styles.reveal}`}>
-            Transparent sprint-based partnerships. Begin focused, build
-            momentum, and scale as mission scope demands.
+            Transparent engagement models tailored to your build phase. No surprise costs,
+            just dedicated engineering capacity.
           </p>
         </div>
 
         <div className={styles.planGrid}>
-          {plans.map((plan, index) => (
-            <article
+          {plans.map((plan) => (
+            <div
               key={plan.name}
               className={`${styles.plan} ${
                 plan.featured ? styles.featuredPlan : ""
               } ${styles.reveal}`}
             >
-              <div className={styles.planOrbit} aria-hidden="true">
-                <i />
-                <span>{index + 1}</span>
-              </div>
               <div className={styles.planSignal}>
-                {plan.signal}
-                {plan.featured && <strong>RECOMMENDED</strong>}
+                <span>{plan.signal}</span>
+                {plan.featured && <strong>MOST POPULAR</strong>}
               </div>
+
+              <div className={styles.planOrbit}>
+                <i />
+                <span>{plan.name[0]}</span>
+              </div>
+
               <h3>{plan.name}</h3>
               <p>{plan.description}</p>
 
@@ -544,46 +623,48 @@ export function CosmicExperience() {
               </div>
 
               <ul>
-                {plan.features.map((feature) => (
-                  <li key={feature}>
-                    <Check size={13} />
-                    {feature}
+                {plan.features.map((feat) => (
+                  <li key={feat}>
+                    <Check size={14} />
+                    <span>{feat}</span>
                   </li>
                 ))}
               </ul>
 
               <button onClick={() => openInquiry(plan.type)}>
-                Select trajectory <ArrowRight size={14} />
+                <span>Select Trajectory</span>
+                <ArrowRight size={14} />
               </button>
-            </article>
+            </div>
           ))}
         </div>
       </section>
 
       {/* 07. GROUND CONTROL (TESTIMONIALS) */}
-      <section
-        id="testimonials"
-        className={`${styles.section} ${styles.testimonials}`}
-      >
-        <SectionLabel index="06">GROUND CONTROL</SectionLabel>
+      <section className={`${styles.section} ${styles.testimonials}`}>
+        <SectionLabel index="06">GROUND CONTROL TRANSMISSIONS</SectionLabel>
+
         <div className={styles.quoteMark}>“</div>
+
         <blockquote className={styles.reveal}>
           {TESTIMONIALS[0].quote}
         </blockquote>
-        <div className={styles.quoteMeta}>
+
+        <div className={`${styles.quoteMeta} ${styles.reveal}`}>
           <strong>{TESTIMONIALS[0].author}</strong>
           <span>
-            {TESTIMONIALS[0].role} · {TESTIMONIALS[0].company}
+            {TESTIMONIALS[0].role.toUpperCase()} — {TESTIMONIALS[0].company.toUpperCase()}
           </span>
         </div>
-        <p className={styles.sampleNotice}>
-          Verified transmission record from past client partnership.
-        </p>
+
+        <div className={styles.sampleNotice}>
+          TRANSMISSION VERIFIED // GROUND CONTROL LOG
+        </div>
       </section>
 
-      {/* 08. OPEN CHANNEL / FINAL CTA */}
+      {/* 08. OPEN CHANNEL (CONTACT CTA) */}
       <section id="contact" className={styles.finalSignal}>
-        <div className={styles.finalOrb} aria-hidden="true">
+        <div className={styles.finalOrb}>
           <i />
           <i />
           <i />
@@ -591,20 +672,21 @@ export function CosmicExperience() {
 
         <div className={styles.finalContent}>
           <SectionLabel index="07">OPEN CHANNEL</SectionLabel>
-          <h2 className={styles.reveal}>
+          <h2 className={`${styles.reveal}`}>
             Have something
             <br />
-            <em>impossible</em> in mind?
+            <em>impossible in mind?</em>
           </h2>
-          <p>
-            Transmit your brief. We will analyze your architecture and return with
-            a clear path forward within 24 hours.
+          <p className={`${styles.reveal}`}>
+            Let&apos;s turn your vision into production software engineered to last.
           </p>
+
           <button
             className={styles.primaryButton}
-            onClick={() => openInquiry()}
+            onClick={() => openInquiry("General Inquiry")}
           >
-            Start the conversation <ArrowRight size={16} />
+            <span>Transmit Project Details</span>
+            <ArrowRight size={16} />
           </button>
         </div>
       </section>
@@ -613,39 +695,47 @@ export function CosmicExperience() {
       <footer className={styles.footer}>
         <div className={styles.footerTop}>
           <div className={styles.footerBrand}>
-            <strong>REDITUS</strong>
-            <span>RETURN · REIMAGINE · REALIZE</span>
+            <strong>REDITUS LABS</strong>
+            <span>ADVANCED SOFTWARE &amp; AI ENGINEERING</span>
           </div>
 
-          <form onSubmit={handleNewsletter} className={styles.newsletter}>
-            <label htmlFor="signal-email">RECEIVE FIELD NOTES</label>
-            <div>
-              <input
-                id="signal-email"
-                type="email"
-                required
-                placeholder="work@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <button aria-label="Subscribe">
-                {subscribed ? <Check size={16} /> : <ArrowRight size={16} />}
-              </button>
-            </div>
-            {subscribed && <span>TRANSMISSION RECEIVED</span>}
-          </form>
+          <div className={styles.newsletter}>
+            <label htmlFor="signal-email">
+              SUBSCRIBE TO FREQUENCY (MONTHLY INSIGHTS)
+            </label>
+            <form onSubmit={handleNewsletter}>
+              <div>
+                <input
+                  id="signal-email"
+                  type="email"
+                  placeholder="enter email address..."
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button type="submit" aria-label="Subscribe to newsletter">
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            </form>
+            {subscribed && <span>SIGNAL RECEIVED. WELCOME ABOARD.</span>}
+          </div>
 
           <div className={styles.footerLinks}>
             <div>
-              <span>EXPLORE</span>
+              <span>NAVIGATION</span>
               <a href="#services">Capabilities</a>
-              <a href="#work">Mission log</a>
+              <a href="#rescue">Vibe Rescue</a>
+              <a href="#work">Flight Record</a>
               <a href="#process">Process</a>
+              <a href="#pricing">Pricing</a>
             </div>
             <div>
-              <span>CONNECT</span>
-              <a href="mailto:hello@reditus.agency">Email us</a>
-              <button onClick={() => openInquiry()}>Project inquiry</button>
+              <span>LEGAL</span>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/terms">Terms of Service</Link>
+              <button onClick={() => openInquiry("Contact")}>
+                Direct Channel
+              </button>
             </div>
           </div>
         </div>
@@ -653,17 +743,15 @@ export function CosmicExperience() {
         <div className={styles.wordmark}>REDITUS</div>
 
         <div className={styles.footerBottom}>
-          <span>© {new Date().getFullYear()} REDITUS LABS</span>
-          <span>REMOTE · GLOBAL OPERATIONS</span>
+          <span>© {new Date().getFullYear()} REDITUS LABS. ALL RIGHTS RESERVED.</span>
           <div>
-            <Link href="/privacy">Privacy</Link>
-            <Link href="/terms">Terms</Link>
+            <Link href="/privacy">PRIVACY</Link>
+            <Link href="/terms">TERMS</Link>
           </div>
         </div>
       </footer>
 
       <InquiryModal
-        key={inquiryType ?? "general"}
         isOpen={isInquiryOpen}
         onClose={() => setIsInquiryOpen(false)}
         initialType={inquiryType}
