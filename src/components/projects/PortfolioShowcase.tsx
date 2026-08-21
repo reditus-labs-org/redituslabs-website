@@ -125,17 +125,24 @@ export function PortfolioShowcase() {
               </div>
 
               {/* Graphic Mockup Element */}
-              <div className="relative z-10 w-full h-28 rounded-xl bg-[#0B1114]/60 backdrop-blur-md border border-[#242C30] p-4 flex flex-col justify-between transform group-hover:scale-[1.02] transition-transform">
-                <div className="flex items-center justify-between">
+              <div className="relative z-10 w-full h-32 rounded-xl bg-[#0B1114]/70 backdrop-blur-md border border-[#242C30] p-4 flex items-center justify-between transform group-hover:scale-[1.02] transition-transform">
+                <div className="flex flex-col justify-between h-full">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#087F8C]" />
                     <span className="w-2.5 h-2.5 rounded-full bg-[#A8E6CF]" />
                     <span className="w-2.5 h-2.5 rounded-full bg-[#B99A5B]" />
                   </div>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#F1EDE3]/40 group-hover:text-[#A8E6CF] transition-colors" />
+                  <div className="font-mono text-xs font-bold text-[#F1EDE3] tracking-widest uppercase">
+                    {project.title}
+                  </div>
                 </div>
-                <div className="font-mono text-xs font-bold text-[#F1EDE3] tracking-widest uppercase">
-                  {project.title}
+
+                <div className="w-16 h-16 rounded-lg bg-[#12191d] border border-[#A8E6CF]/30 p-2 flex items-center justify-center shrink-0">
+                  <img
+                    src="/reditus-logo.svg"
+                    alt={`${project.title} Preview`}
+                    className="w-full h-full object-contain filter drop-shadow-md"
+                  />
                 </div>
               </div>
             </div>

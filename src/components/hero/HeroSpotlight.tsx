@@ -13,6 +13,7 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const badgesRef = useRef<HTMLDivElement>(null);
   const spotlightRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -24,6 +25,13 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
         y: 40,
         stagger: 0.15,
       })
+      .from(".hero-central-logo", {
+        opacity: 0,
+        scale: 0.4,
+        rotationY: 90,
+        duration: 1.4,
+        ease: "back.out(1.7)",
+      }, "<0.1")
       .from(".hero-badge", {
         opacity: 0,
         scale: 0.7,
@@ -32,6 +40,16 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
         stagger: 0.15,
         ease: "back.out(1.7)",
       }, "<0.2");
+
+      // Continuous 3D floating animation for central logo
+      gsap.to(".hero-central-logo", {
+        y: -14,
+        rotationZ: 1.5,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
 
       // Spotlight glow pulse
       gsap.fromTo(
@@ -58,10 +76,20 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-    gsap.to(".parallax-badge-1", { x: x * 35, y: y * 35, duration: 0.6, ease: "power2.out" });
-    gsap.to(".parallax-badge-2", { x: x * -40, y: y * -30, duration: 0.6, ease: "power2.out" });
-    gsap.to(".parallax-badge-3", { x: x * 30, y: y * -35, duration: 0.6, ease: "power2.out" });
-    gsap.to(".parallax-badge-4", { x: x * -25, y: y * 25, duration: 0.6, ease: "power2.out" });
+    // 3D Parallax Tilt for Central SVG Logo
+    gsap.to(".hero-central-logo", {
+      x: x * 35,
+      y: y * 25,
+      rotationY: x * 25,
+      rotationX: -y * 25,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+
+    gsap.to(".parallax-badge-1", { x: x * 45, y: y * 45, duration: 0.6, ease: "power2.out" });
+    gsap.to(".parallax-badge-2", { x: x * -50, y: y * -40, duration: 0.6, ease: "power2.out" });
+    gsap.to(".parallax-badge-3", { x: x * 40, y: y * -45, duration: 0.6, ease: "power2.out" });
+    gsap.to(".parallax-badge-4", { x: x * -35, y: y * 35, duration: 0.6, ease: "power2.out" });
   };
 
   return (
@@ -117,19 +145,31 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
         </div>
       </div>
 
-      {/* Central Interactive 3D Stage & Floating Badges */}
+      {/* Central Interactive 3D Stage with Official Logo SVG & Floating Badges */}
       <div
         ref={badgesRef}
-        className="relative z-10 w-full max-w-5xl mx-auto h-[320px] sm:h-[400px] flex items-center justify-center"
+        className="relative z-10 w-full max-w-5xl mx-auto h-[340px] sm:h-[420px] flex items-center justify-center"
       >
         {/* Glowing Stage Disk Podium Floor */}
         <div
           ref={spotlightRef}
-          className="absolute bottom-4 w-[320px] sm:w-[560px] md:w-[680px] h-[100px] sm:h-[160px] hero-podium-ellipse pointer-events-none transform -rotate-2"
+          className="absolute bottom-4 w-[340px] sm:w-[580px] md:w-[720px] h-[110px] sm:h-[180px] hero-podium-ellipse pointer-events-none transform -rotate-2"
         />
 
+        {/* Central GSAP Interactive SVG Logo Showcase */}
+        <div
+          ref={logoRef}
+          className="hero-central-logo relative z-30 w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 flex items-center justify-center p-5 bg-[#12191d]/85 backdrop-blur-md rounded-3xl border border-[#A8E6CF]/40 shadow-[0_0_60px_rgba(8,127,140,0.6)] group cursor-pointer transition-colors duration-300 hover:border-[#A8E6CF] hover:shadow-[0_0_90px_rgba(168,230,207,0.7)]"
+        >
+          <img
+            src="/reditus-logo.svg"
+            alt="REDITUS Official Logo SVG"
+            className="w-full h-full object-contain filter drop-shadow-[0_10px_25px_rgba(8,127,140,0.8)]"
+          />
+        </div>
+
         {/* Floating Badge 1: WEB (Top Left) */}
-        <div className="hero-badge parallax-badge-1 absolute top-4 left-6 sm:left-16 z-20 animate-float-slow">
+        <div className="hero-badge parallax-badge-1 absolute top-4 left-4 sm:left-12 z-20 animate-float-slow">
           <div className="glass-badge px-5 py-3 rounded-2xl flex items-center gap-3 text-[#F1EDE3] transition-all cursor-pointer group">
             <div className="p-2.5 rounded-xl bg-[#087F8C]/30 text-[#A8E6CF] group-hover:bg-[#087F8C]">
               <Code2 className="w-5 h-5" />
@@ -142,7 +182,7 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
         </div>
 
         {/* Floating Badge 2: UI/UX (Top Right) */}
-        <div className="hero-badge parallax-badge-2 absolute top-8 right-6 sm:right-16 z-20 animate-float-fast">
+        <div className="hero-badge parallax-badge-2 absolute top-8 right-4 sm:right-12 z-20 animate-float-fast">
           <div className="glass-badge px-5 py-3 rounded-2xl flex items-center gap-3 text-[#F1EDE3] transition-all cursor-pointer group">
             <div className="p-2.5 rounded-xl bg-[#A8E6CF]/20 text-[#A8E6CF] group-hover:bg-[#A8E6CF] group-hover:text-[#0B1114]">
               <Layout className="w-5 h-5" />
@@ -155,7 +195,7 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
         </div>
 
         {/* Floating Badge 3: AI PIPELINES (Bottom Left) */}
-        <div className="hero-badge parallax-badge-3 absolute bottom-12 left-10 sm:left-28 z-20 animate-float-fast">
+        <div className="hero-badge parallax-badge-3 absolute bottom-12 left-6 sm:left-20 z-20 animate-float-fast">
           <div className="glass-badge px-5 py-3 rounded-2xl flex items-center gap-3 text-[#F1EDE3] transition-all cursor-pointer group">
             <div className="p-2.5 rounded-xl bg-[#B99A5B]/30 text-[#B99A5B] group-hover:bg-[#B99A5B] group-hover:text-[#0B1114]">
               <Cpu className="w-5 h-5" />
@@ -168,7 +208,7 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
         </div>
 
         {/* Floating Badge 4: VIBE-RESCUE (Bottom Right) */}
-        <div className="hero-badge parallax-badge-4 absolute bottom-10 right-10 sm:right-28 z-20 animate-float-slow">
+        <div className="hero-badge parallax-badge-4 absolute bottom-10 right-6 sm:right-20 z-20 animate-float-slow">
           <div className="glass-badge px-5 py-3 rounded-2xl flex items-center gap-3 text-[#F1EDE3] transition-all cursor-pointer group">
             <div className="p-2.5 rounded-xl bg-[#087F8C]/30 text-[#A8E6CF] group-hover:bg-[#087F8C]">
               <Layers className="w-5 h-5" />
