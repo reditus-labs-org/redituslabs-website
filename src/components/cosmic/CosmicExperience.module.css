@@ -399,12 +399,12 @@
 }
 
 /* ==========================================================================
-   3D HOLOGRAPHIC COSMIC "R" MONOGRAM EMBLEM
+   3D HOLOGRAPHIC COSMIC "R" MONOGRAM EMBLEM (OFFICIAL REDITUS BRAND LOGO)
    ========================================================================== */
 
 .cosmicRSystem {
   position: relative;
-  width: min(46vw, 660px);
+  width: min(48vw, 680px);
   aspect-ratio: 1;
   justify-self: end;
   display: grid;
@@ -415,8 +415,8 @@
 
 .rGlowHalo {
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 82%;
+  height: 82%;
   border-radius: 50%;
   background: 
     radial-gradient(circle, rgba(29, 88, 216, 0.45) 0%, rgba(0, 229, 255, 0.25) 35%, rgba(124, 58, 237, 0.15) 60%, transparent 75%);
@@ -425,11 +425,11 @@
 }
 
 @keyframes rHaloPulse {
-  0% { transform: scale(0.95); opacity: 0.7; }
+  0% { transform: scale(0.95); opacity: 0.75; }
   100% { transform: scale(1.08); opacity: 1; }
 }
 
-/* Outer Orbital Rings spinning around the Cosmic R */
+/* Outer & Inner Elliptical Orbital Rings */
 .rOrbitOuter,
 .rOrbitInner {
   position: absolute;
@@ -438,19 +438,19 @@
 }
 
 .rOrbitOuter {
-  width: 92%;
-  height: 48%;
+  width: 94%;
+  height: 50%;
   border: 1.5px dashed rgba(29, 88, 216, 0.45);
-  transform: rotateX(62deg) rotateY(-15deg);
+  transform: rotateX(64deg) rotateY(-14deg);
   animation: rSpinRing 28s linear infinite;
-  box-shadow: inset 0 0 20px rgba(0, 229, 255, 0.15);
+  box-shadow: inset 0 0 24px rgba(0, 229, 255, 0.18);
 }
 
 .rOrbitInner {
-  width: 68%;
-  height: 68%;
-  border: 1px solid rgba(0, 229, 255, 0.35);
-  transform: rotateX(42deg) rotateY(45deg);
+  width: 70%;
+  height: 70%;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  transform: rotateX(44deg) rotateY(42deg);
   animation: rSpinRing 20s linear infinite reverse;
 }
 
@@ -469,77 +469,106 @@
   box-shadow: 0 0 16px #00e5ff, 0 0 30px #00e5ff;
 }
 
-.rOrbitOuter i:nth-child(1) { top: 10%; left: 20%; }
-.rOrbitOuter i:nth-child(2) { bottom: 12%; right: 18%; background: #3b82f6; box-shadow: 0 0 16px #3b82f6; }
-.rOrbitOuter i:nth-child(3) { top: 40%; right: -2%; }
-.rOrbitInner i { bottom: 15%; left: 20%; background: #7c3aed; box-shadow: 0 0 16px #7c3aed; }
+.rOrbitOuter i:nth-child(1) { top: 12%; left: 18%; }
+.rOrbitOuter i:nth-child(2) { bottom: 10%; right: 20%; background: #3b82f6; box-shadow: 0 0 16px #3b82f6; }
+.rOrbitOuter i:nth-child(3) { top: 42%; right: -2%; }
+.rOrbitInner i:nth-child(1) { bottom: 18%; left: 18%; background: #7c3aed; box-shadow: 0 0 16px #7c3aed; }
+.rOrbitInner i:nth-child(2) { top: 10%; right: 16%; background: #00e5ff; box-shadow: 0 0 16px #00e5ff; }
 
 /* The 3D Cosmic "R" Core Container */
 .cosmicRCore {
   position: relative;
-  width: 58%;
-  height: 68%;
+  width: 62%;
+  height: 62%;
   display: grid;
   place-items: center;
-  transform: translateZ(20px);
-  filter: drop-shadow(0 15px 35px rgba(5, 20, 60, 0.4));
+  transform: translateZ(30px);
 }
 
-.svgCosmicR {
+.rEmblemWrapper {
+  position: relative;
   width: 100%;
   height: 100%;
-  overflow: visible;
-  animation: rFloat 6s ease-in-out infinite alternate;
+  display: grid;
+  place-items: center;
+  animation: rEmblemFloat 6s ease-in-out infinite alternate;
 }
 
-@keyframes rFloat {
-  0% { transform: translateY(-6px); }
-  100% { transform: translateY(6px); }
+@keyframes rEmblemFloat {
+  0% { transform: translateY(-8px) scale(0.98); }
+  100% { transform: translateY(8px) scale(1.02); }
+}
+
+.reditusLogoSvg {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  filter: 
+    drop-shadow(0 0 20px rgba(0, 229, 255, 0.75))
+    drop-shadow(0 0 45px rgba(29, 88, 216, 0.55))
+    drop-shadow(0 15px 35px rgba(10, 25, 70, 0.35));
+  transition: filter 0.3s ease;
+}
+
+.cosmicRSystem:hover .reditusLogoSvg {
+  filter: 
+    drop-shadow(0 0 30px rgba(0, 229, 255, 0.95))
+    drop-shadow(0 0 60px rgba(29, 88, 216, 0.75))
+    drop-shadow(0 20px 40px rgba(10, 25, 70, 0.45));
 }
 
 .rGridOverlay {
   position: absolute;
-  inset: 0;
+  inset: -10%;
   pointer-events: none;
   background-image: 
-    repeating-linear-gradient(0deg, transparent 0 18px, rgba(0, 229, 255, 0.12) 19px),
-    repeating-linear-gradient(90deg, transparent 0 18px, rgba(0, 229, 255, 0.12) 19px);
-  mask-image: radial-gradient(ellipse at 50% 50%, black 40%, transparent 85%);
+    repeating-linear-gradient(0deg, transparent 0 20px, rgba(0, 229, 255, 0.1) 21px),
+    repeating-linear-gradient(90deg, transparent 0 20px, rgba(0, 229, 255, 0.1) 21px);
+  mask-image: radial-gradient(ellipse at 50% 50%, black 35%, transparent 80%);
   mix-blend-mode: overlay;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 .rScanBeam {
   position: absolute;
   width: 140%;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.8), rgba(255, 255, 255, 0.9), rgba(0, 229, 255, 0.8), transparent);
-  box-shadow: 0 0 15px #00e5ff;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.85), rgba(255, 255, 255, 0.95), rgba(0, 229, 255, 0.85), transparent);
+  box-shadow: 0 0 18px #00e5ff;
   top: 0;
   left: -20%;
-  opacity: 0.65;
-  animation: rScanSweep 4s ease-in-out infinite alternate;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: rScanSweep 4.5s ease-in-out infinite alternate;
 }
 
 @keyframes rScanSweep {
-  0% { top: 10%; opacity: 0.3; }
-  50% { opacity: 0.8; }
-  100% { top: 90%; opacity: 0.3; }
+  0% { top: 8%; opacity: 0.3; }
+  50% { opacity: 0.9; }
+  100% { top: 92%; opacity: 0.3; }
 }
 
-/* Telemetry Badge */
+.rEmblemGlowOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 45% 35%, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+  mix-blend-mode: overlay;
+}
+
+/* Telemetry Badge matching user reference: OBJ-R/01 — STABLE ORBIT */
 .cosmicRLabel {
   position: absolute;
-  bottom: 4%;
+  bottom: 2%;
   right: -2%;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(29, 88, 216, 0.35);
-  padding: 10px 16px;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(29, 88, 216, 0.3);
+  padding: 8px 16px;
   backdrop-filter: blur(14px);
-  box-shadow: 0 10px 30px rgba(29, 88, 216, 0.14);
+  box-shadow: 0 10px 30px rgba(29, 88, 216, 0.12);
   border-radius: 2px;
 }
 
@@ -564,15 +593,13 @@
 }
 
 .labelReadout {
-  display: flex;
-  gap: 14px;
   font-family: var(--font-jetbrains-mono), monospace;
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   color: #1d58d8;
-  border-top: 1px solid rgba(29, 88, 216, 0.15);
-  padding-top: 4px;
+  border-left: 1px solid rgba(29, 88, 216, 0.2);
+  padding-left: 12px;
 }
 
 .heroTelemetry {

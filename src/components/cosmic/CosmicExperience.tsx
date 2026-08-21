@@ -98,8 +98,19 @@ export function CosmicExperience() {
   const [activeProject, setActiveProject] = useState(0);
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
-  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const universeRef = useRef<HTMLElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 26; // deg
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -26; // deg
+    setTilt({ x: y, y: x });
+  };
+
+  const handleMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
+  };
 
   const openInquiry = (type?: string) => {
     setInquiryType(type);
@@ -124,17 +135,6 @@ export function CosmicExperience() {
     return () => observer.disconnect();
   }, []);
 
-  const handleHeroMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setRotate({ x: y * -16, y: x * 18 });
-  };
-
-  const handleHeroMouseLeave = () => {
-    setRotate({ x: 0, y: 0 });
-  };
-
   const handleNewsletter = (event: React.FormEvent) => {
     event.preventDefault();
     if (!email) return;
@@ -158,12 +158,7 @@ export function CosmicExperience() {
       <Navbar onOpenInquiry={openInquiry} />
 
       {/* 01. HERO / COMMAND VIEWPORT */}
-      <section
-        id="hero"
-        className={styles.hero}
-        onMouseMove={handleHeroMouseMove}
-        onMouseLeave={handleHeroMouseLeave}
-      >
+      <section id="hero" className={styles.hero}>
         <div className={styles.heroMeta}>
           <span>SECTOR 07 // DIGITAL OBSERVER</span>
           <span className={styles.online}>
@@ -202,17 +197,21 @@ export function CosmicExperience() {
           </div>
         </div>
 
-        {/* 3D Holographic Cosmic "R" Monogram Visual */}
+        {/* 3D Cosmic "R" Monogram Visual (Using Official REDITUS Logo) */}
         <div
           className={styles.cosmicRSystem}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
           style={{
-            transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-            transition: "transform 0.15s cubic-bezier(0.1, 0.5, 0.1, 1)",
+            transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+            transition: tilt.x === 0 ? "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)" : "none",
           }}
+          aria-label="REDITUS 3D Cosmic R Monogram Emblem"
         >
+          {/* Neon Glow Backdrop */}
           <div className={styles.rGlowHalo} />
 
-          {/* Outer Orbital Rings circling the R */}
+          {/* Concentric Orbital Rings */}
           <div className={styles.rOrbitOuter}>
             <i />
             <i />
@@ -220,71 +219,31 @@ export function CosmicExperience() {
           </div>
           <div className={styles.rOrbitInner}>
             <i />
+            <i />
           </div>
 
-          {/* The 3D Cosmic "R" Core */}
+          {/* 3D Core with Official REDITUS Logo SVG */}
           <div className={styles.cosmicRCore}>
-            {/* SVG Glowing Precision Monogram "R" */}
-            <svg
-              className={styles.svgCosmicR}
-              viewBox="0 0 200 240"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient id="rGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#ffffff" />
-                  <stop offset="35%" stopColor="#70aaff" />
-                  <stop offset="70%" stopColor="#1d58d8" />
-                  <stop offset="100%" stopColor="#0b1e47" />
-                </linearGradient>
-
-                <linearGradient id="rStrokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#00e5ff" />
-                  <stop offset="50%" stopColor="#3b82f6" />
-                  <stop offset="100%" stopColor="#8b5cf6" />
-                </linearGradient>
-
-                <filter id="rGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="8" result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-              </defs>
-
-              {/* Outer Glowing Neon Aura Path */}
-              <path
-                d="M 45,30 L 115,30 C 150,30 170,52 170,82 C 170,110 148,130 115,130 L 45,130 L 45,30 Z M 45,130 L 110,130 L 165,210 L 125,210 L 78,130 L 45,130 Z M 45,130 L 45,210"
-                stroke="url(#rStrokeGrad)"
-                strokeWidth="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                opacity="0.65"
-                filter="url(#rGlowFilter)"
-              />
-
-              {/* Main Solid Futuristic "R" Monogram */}
-              <path
-                d="M 50,35 L 115,35 C 145,35 162,54 162,82 C 162,108 143,125 115,125 L 85,125 L 85,72 L 112,72 C 124,72 130,66 130,58 C 130,50 124,45 112,45 L 85,45 L 85,125 L 50,125 Z M 50,125 L 85,125 L 85,205 L 50,205 Z M 85,125 L 120,125 L 160,205 L 128,205 L 94,137 L 85,137 Z"
-                fill="url(#rGradient)"
-              />
-
-              {/* Glowing Quantum Core Bead inside loop */}
-              <circle cx="112" cy="58" r="6" fill="#00e5ff" filter="url(#rGlowFilter)" />
-            </svg>
-
             <div className={styles.rGridOverlay} />
             <div className={styles.rScanBeam} />
+            <div className={styles.rEmblemWrapper}>
+              <img
+                src="/reditus-logo.svg"
+                alt="REDITUS Cosmic Monogram"
+                className={styles.reditusLogoSvg}
+              />
+              <div className={styles.rEmblemGlowOverlay} />
+            </div>
           </div>
 
-          {/* Telemetry Badge */}
+          {/* Telemetry HUD Badge matching user image */}
           <div className={styles.cosmicRLabel}>
             <div className={styles.labelBeacon}>
               <i />
-              <span>EMBLEM–01 // REDITUS CORE</span>
+              <span>OBJ–R/01</span>
             </div>
             <div className={styles.labelReadout}>
-              <span>VECTOR: 07-N</span>
-              <span>STATUS: SYNCHRONIZED</span>
+              <span>STABLE ORBIT</span>
             </div>
           </div>
         </div>
