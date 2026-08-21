@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { ReditusLogo } from "@/components/ui/ReditusLogo";
+import { IsometricText } from "@/components/ui/IsometricText";
 
 export function FooterNewsletter() {
   const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ export function FooterNewsletter() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Row: Experience Slogan & Navigation Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-20 border-b border-[#242C30]/50">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-[#242C30]/50">
           
           {/* Left Column: Slogan & Newsletter */}
           <div className="lg:col-span-6 flex flex-col justify-between">
@@ -113,11 +114,9 @@ export function FooterNewsletter() {
           </div>
         </div>
 
-        {/* Centerpiece: MASSIVE Creative Full-Width "Reditus Labs" Typography */}
-        <div className="py-12 text-center overflow-hidden border-b border-[#242C30]/50 select-none group">
-          <h1 className="text-[14vw] sm:text-[15vw] leading-none font-pixel font-bold tracking-tighter uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#F1EDE3] via-[#F1EDE3]/90 to-[#087F8C]/60 hover:from-[#A8E6CF] hover:to-[#087F8C] transition-all duration-700 transform group-hover:scale-[1.01] drop-shadow-[0_10px_30px_rgba(8,127,140,0.2)]">
-            Reditus Labs
-          </h1>
+        {/* Centerpiece: MASSIVE Single Line Architectural Isometric REDITUS LABS Font */}
+        <div className="py-12 px-2 overflow-hidden border-b border-[#242C30]/50 select-none group transition-transform duration-500 hover:scale-[1.01]">
+          <IsometricText text="REDITUS LABS" className="w-full" />
         </div>
 
         {/* Bottom Bar */}
