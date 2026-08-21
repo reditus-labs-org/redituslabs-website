@@ -16,25 +16,22 @@ export function HeroSpotlight({ onOpenInquiry }: HeroSpotlightProps) {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Headline sequence
-      gsap.from(".hero-anim-text", {
+      // Master Timeline choreography (following GSAP best practices)
+      const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+
+      tl.from(".hero-anim-text", {
         opacity: 0,
         y: 40,
-        duration: 1,
         stagger: 0.15,
-        ease: "power3.out",
-      });
-
-      // Floating badges sequence
-      gsap.from(".hero-badge", {
+      })
+      .from(".hero-badge", {
         opacity: 0,
         scale: 0.7,
         y: 60,
         duration: 1.2,
-        stagger: 0.2,
-        delay: 0.3,
+        stagger: 0.15,
         ease: "back.out(1.7)",
-      });
+      }, "<0.2");
 
       // Spotlight glow pulse
       gsap.fromTo(

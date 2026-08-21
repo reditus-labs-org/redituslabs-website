@@ -6,6 +6,7 @@ import { HeroSpotlight } from "@/components/hero/HeroSpotlight";
 import { TechMarqueeStrip } from "@/components/ui/TechMarqueeStrip";
 import { SolutionsBento } from "@/components/metrics/SolutionsBento";
 import { TechBlueprintSvg } from "@/components/ui/TechBlueprintSvg";
+import { ProcessHorizontal } from "@/components/process/ProcessHorizontal";
 import { PortfolioShowcase } from "@/components/projects/PortfolioShowcase";
 import { PricingGrid } from "@/components/pricing/PricingGrid";
 import { TestimonialSpotlight } from "@/components/testimonials/TestimonialSpotlight";
@@ -38,16 +39,19 @@ export default function Home() {
       {/* Section 3: Animated SVG System Blueprint Canvas */}
       <TechBlueprintSvg />
 
-      {/* Section 4: Featured Work Showcase */}
+      {/* Section 4: Pinned Horizontal Process Workflow (GSAP containerAnimation) */}
+      <ProcessHorizontal />
+
+      {/* Section 5: Featured Work Showcase */}
       <PortfolioShowcase />
 
-      {/* Section 5: Flexible Pricing Retainer Tiers */}
+      {/* Section 6: Flexible Pricing Retainer Tiers */}
       <PricingGrid onOpenInquiry={handleOpenInquiry} />
 
-      {/* Section 6: Editorial Testimonials & Pixel Grid */}
+      {/* Section 7: Editorial Testimonials & Pixel Grid */}
       <TestimonialSpotlight />
 
-      {/* Section 7: Footer & Newsletter Conversion with Isometric Text */}
+      {/* Section 8: Footer & Newsletter Conversion with Isometric Text */}
       <FooterNewsletter />
 
       {/* Global Interactive Project Inquiry Modal */}
