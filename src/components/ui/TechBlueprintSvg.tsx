@@ -53,7 +53,7 @@ export function TechBlueprintSvg() {
               <Terminal className="w-3.5 h-3.5" />
               <span>SYSTEM ARCHITECTURE BLUEPRINT</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-pixel font-bold tracking-tight uppercase text-white">
+            <h2 className="text-3xl sm:text-5xl font-display font-extrabold tracking-tight uppercase text-white">
               ENGINEERED FOR <span className="text-[#087F8C]">HIGH LATENCY RESILIENCE</span>
             </h2>
           </div>

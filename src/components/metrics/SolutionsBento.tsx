@@ -105,7 +105,7 @@ export function SolutionsBento() {
                 <span>MEASURABLE ENGINEERING</span>
               </div>
 
-              <h2 className="text-4xl sm:text-6xl md:text-7xl font-pixel font-bold tracking-tight uppercase leading-[0.92] text-[#0B1114] mb-8">
+              <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold tracking-tight uppercase leading-[0.92] text-[#0B1114] mb-8">
                 CREATIVE <br />
                 SOLUTIONS <br />
                 BUILT FOR <br />
