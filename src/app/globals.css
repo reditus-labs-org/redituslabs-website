@@ -150,29 +150,37 @@ html {
 .animate-process-slide-left {
   animation: processSlideInLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-/* Cosmic route integration: shared legal pages and inquiry flow */
-body{background:#03050b;color:#edf4ff;overflow-x:hidden}
-:focus-visible{outline:2px solid #88e8f2;outline-offset:4px}
-main.bg-bone{background:radial-gradient(circle at 75% 5%,rgba(59,89,169,.14),transparent 28%),#050814!important;color:#edf4ff!important}
-main.bg-bone .bg-bone,main.bg-bone .bg-bone-card{background-color:#080e1c!important}
-main.bg-bone .bg-seafoam\/10,main.bg-bone .bg-deep-ink\/5{background-color:rgba(71,107,180,.1)!important}
-main.bg-bone .bg-deep-ink{background-color:#070c18!important}
-main.bg-bone .text-deep-ink{color:#edf4ff!important}
-main.bg-bone .text-graphite{color:#b9c4d8!important}
-main.bg-bone .text-graphite-muted{color:#8c98b3!important}
-main.bg-bone .text-petrol{color:#79b5ff!important}
-main.bg-bone .text-seafoam{color:#88e8f2!important}
-main.bg-bone [class*="border-graphite"],main.bg-bone [class*="border-petrol"]{border-color:rgba(137,171,236,.18)!important}
-main.bg-bone .bg-blueprint-lines{background-image:linear-gradient(to right,rgba(105,140,209,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(105,140,209,.045) 1px,transparent 1px)}
-.cosmic-modal-shell{background:rgba(1,3,8,.86)!important}
-.cosmic-modal-panel{background:linear-gradient(145deg,#0b1222,#060a14)!important;border:1px solid rgba(130,177,255,.35)!important;color:#edf4ff!important;box-shadow:0 35px 100px rgba(0,0,0,.75),0 0 80px rgba(64,109,199,.1)!important}
-.cosmic-modal-panel .text-deep-ink,.cosmic-modal-panel .text-graphite{color:#e5efff!important}
-.cosmic-modal-panel .text-graphite-muted{color:#8f9bb1!important}
-.cosmic-modal-panel .text-petrol{color:#7bb8ff!important}
-.cosmic-modal-panel .bg-bone,.cosmic-modal-panel .bg-bone-card{background:#080e1a!important}
-.cosmic-modal-panel .bg-deep-ink\/5,.cosmic-modal-panel .bg-seafoam\/20,.cosmic-modal-panel .bg-petrol\/10{background:rgba(73,117,200,.1)!important}
-.cosmic-modal-panel [class*="border-graphite"],.cosmic-modal-panel [class*="border-petrol"]{border-color:rgba(132,170,235,.22)!important}
-.cosmic-modal-panel input,.cosmic-modal-panel select,.cosmic-modal-panel textarea{color:#e9f2ff!important;background:#060b16!important}
-.cosmic-modal-panel input::placeholder,.cosmic-modal-panel textarea::placeholder{color:#53617a}
-.cosmic-modal-panel .bg-petrol{background:#82baff!important;color:#06101c!important}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+/* Cosmic route integration & modal theme alignment */
+body {
+  background-color: #F1EDE3;
+  color: #0B1114;
+  overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid #087F8C;
+  outline-offset: 4px;
+}
+
+.cosmic-modal-shell {
+  background: rgba(11, 17, 20, 0.82) !important;
+}
+
+.cosmic-modal-panel {
+  background: #F1EDE3 !important;
+  border: 1px solid #087F8C !important;
+  color: #0B1114 !important;
+  box-shadow: 0 35px 100px rgba(11, 17, 20, 0.5), 0 0 50px rgba(8, 127, 140, 0.15) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
