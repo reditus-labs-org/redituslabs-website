@@ -98,19 +98,7 @@ export function CosmicExperience() {
   const [activeProject, setActiveProject] = useState(0);
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const universeRef = useRef<HTMLElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 26; // deg
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -26; // deg
-    setTilt({ x: y, y: x });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0 });
-  };
 
   const openInquiry = (type?: string) => {
     setInquiryType(type);
@@ -197,54 +185,25 @@ export function CosmicExperience() {
           </div>
         </div>
 
-        {/* 3D Cosmic "R" Monogram Visual (Using Official REDITUS Logo) */}
-        <div
-          className={styles.cosmicRSystem}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          style={{
-            transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-            transition: tilt.x === 0 ? "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)" : "none",
-          }}
-          aria-label="REDITUS 3D Cosmic R Monogram Emblem"
-        >
-          {/* Neon Glow Backdrop */}
-          <div className={styles.rGlowHalo} />
-
-          {/* Concentric Orbital Rings */}
-          <div className={styles.rOrbitOuter}>
+        {/* Celestial Orbital System Visual */}
+        <div className={styles.planetSystem} aria-hidden="true">
+          <div className={styles.planetGlow} />
+          <div className={styles.orbitOuter}>
             <i />
             <i />
             <i />
           </div>
-          <div className={styles.rOrbitInner}>
-            <i />
+          <div className={styles.orbitInner}>
             <i />
           </div>
-
-          {/* 3D Core with Official REDITUS Logo SVG */}
-          <div className={styles.cosmicRCore}>
-            <div className={styles.rGridOverlay} />
-            <div className={styles.rScanBeam} />
-            <div className={styles.rEmblemWrapper}>
-              <img
-                src="/reditus-logo.svg"
-                alt="REDITUS Cosmic Monogram"
-                className={styles.reditusLogoSvg}
-              />
-              <div className={styles.rEmblemGlowOverlay} />
-            </div>
+          <div className={styles.planet}>
+            <div className={styles.planetLight} />
+            <div className={styles.planetShade} />
           </div>
-
-          {/* Telemetry HUD Badge matching user image */}
-          <div className={styles.cosmicRLabel}>
-            <div className={styles.labelBeacon}>
-              <i />
-              <span>OBJ–R/01</span>
-            </div>
-            <div className={styles.labelReadout}>
-              <span>STABLE ORBIT</span>
-            </div>
+          <div className={styles.planetLabel}>
+            <span>OBJ–R/01</span>
+            <i />
+            <span>STABLE ORBIT</span>
           </div>
         </div>
 
