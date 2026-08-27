@@ -1591,6 +1591,164 @@
 }
 
 /* ==========================================================================
+   TRUST TELEMETRY / METRICS (DEEP INK BAND)
+   ========================================================================== */
+
+.trustBand {
+  background: #0B1114;
+  color: #F1EDE3;
+  border-bottom: 1px solid #242C30;
+}
+
+.trustHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.trustHead .sectionLabel {
+  align-self: center;
+}
+
+.trustTitle {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 0 0 1.25rem;
+  color: #F1EDE3;
+}
+
+.trustTitle em {
+  font-style: normal;
+  color: #A8E6CF;
+}
+
+.trustSub {
+  font-family: var(--font-outfit), sans-serif;
+  color: rgba(241, 237, 227, 0.62);
+  max-width: 560px;
+  margin: 0;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.telemetryWindow {
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto 4rem;
+  border: 1px solid rgba(8, 127, 140, 0.35);
+  background: rgba(8, 127, 140, 0.08);
+  border-radius: 8px;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 12px;
+  color: #A8E6CF;
+  line-height: 1.8;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  overflow-x: auto;
+}
+
+.telemetryWindow .telPrompt {
+  color: #B99A5B;
+}
+
+.telemetryWindow .telKey {
+  color: #087F8C;
+}
+
+.telemetryWindow .telVal {
+  color: #F1EDE3;
+}
+
+.telemetryWindow .telGreen {
+  color: #A8E6CF;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--panel-border);
+  border: 1px solid rgba(8, 127, 140, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.metricCell {
+  background: #10171B;
+  padding: 2.6rem 2rem;
+  text-align: center;
+  position: relative;
+  transition: background 0.35s ease;
+}
+
+.metricCell:hover {
+  background: #131C21;
+}
+
+.metricCode {
+  position: absolute;
+  top: 1.1rem;
+  left: 1.2rem;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: rgba(168, 230, 207, 0.5);
+}
+
+.metricValue {
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+  font-weight: 700;
+  color: #A8E6CF;
+  line-height: 1;
+  margin-top: 1rem;
+}
+
+.metricLabel {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(241, 237, 227, 0.75);
+  margin-top: 0.9rem;
+  text-transform: uppercase;
+}
+
+.trustStatus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 2.4rem;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #B99A5B;
+  text-transform: uppercase;
+}
+
+.trustStatus i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #B99A5B;
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  .metricGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
    FINAL SIGNAL / OPEN CHANNEL (CTA)
    ========================================================================== */
 

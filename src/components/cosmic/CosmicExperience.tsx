@@ -582,7 +582,58 @@ export function CosmicExperience() {
         </p>
       </section>
 
-      {/* 08. OPEN CHANNEL / FINAL CTA */}
+      {/* 08. TRUST TELEMETRY (METRICS) */}
+      <section
+        id="metrics"
+        className={`${styles.section} ${styles.trustBand}`}
+      >
+        <div className={styles.trustHead}>
+          <SectionLabel index="07">TRUST TELEMETRY</SectionLabel>
+          <h2 className={`${styles.trustTitle} ${styles.reveal}`}>
+            Telemetry from
+            <br />
+            <em>beyond the horizon.</em>
+          </h2>
+          <p className={styles.trustSub}>
+            Every system we send to orbit is measured, hardened, and held to a
+            production-grade standard — never a lucky launch.
+          </p>
+        </div>
+
+        <div className={`${styles.telemetryWindow} ${styles.reveal}`} aria-hidden="true">
+          <pre>
+            <span className={styles.telPrompt}>$</span> system.status<br />
+            <span className={styles.telKey}>projects </span>= <span className={styles.telVal}>50+</span>
+            {"   "}
+            <span className={styles.telKey}>clients </span>= <span className={styles.telVal}>30+</span>
+            {"   "}
+            <span className={styles.telKey}>impact </span>= <span className={styles.telGreen}>HIGH</span><br />
+            <span className={styles.telKey}>status </span>= <span className={styles.telGreen}>BUILDING</span>
+          </pre>
+        </div>
+
+        <div className={styles.metricGrid}>
+          {[
+            { code: "01", value: "50+", label: "Projects Delivered" },
+            { code: "02", value: "30+", label: "Happy Clients" },
+            { code: "03", value: "10+", label: "Industries Served" },
+            { code: "04", value: "99%", label: "Client Satisfaction" },
+          ].map((metric) => (
+            <div key={metric.code} className={`${styles.metricCell} ${styles.reveal}`}>
+              <span className={styles.metricCode}>TEL / {metric.code}</span>
+              <div className={styles.metricValue}>{metric.value}</div>
+              <div className={styles.metricLabel}>{metric.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.trustStatus}>
+          <i />
+          Placeholder figures — verify before launch
+        </div>
+      </section>
+
+      {/* 09. OPEN CHANNEL / FINAL CTA */}
       <section id="contact" className={styles.finalSignal}>
         <div className={styles.finalOrb} aria-hidden="true">
           <i />
@@ -591,7 +642,7 @@ export function CosmicExperience() {
         </div>
 
         <div className={styles.finalContent}>
-          <SectionLabel index="07">OPEN CHANNEL</SectionLabel>
+          <SectionLabel index="08">OPEN CHANNEL</SectionLabel>
           <h2 className={styles.reveal}>
             Have something
             <br />
@@ -642,6 +693,7 @@ export function CosmicExperience() {
               <a href="#services">Capabilities</a>
               <a href="#work">Mission log</a>
               <a href="#process">Process</a>
+              <a href="#metrics">Telemetry</a>
             </div>
             <div>
               <span>CONNECT</span>
