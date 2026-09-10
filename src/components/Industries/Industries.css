@@ -1,0 +1,123 @@
+.industries-section {
+  background-color: var(--c-bone);
+  color: #121416;
+  padding: 6.5rem 0 7rem;
+}
+
+.industries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+}
+
+.industries-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.6rem, 4.4vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: #121416;
+  margin-bottom: 0.5rem;
+}
+
+.industries-subline {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  color: rgba(18, 20, 22, 0.45);
+}
+
+.industries-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #121416;
+}
+
+.industries-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(18, 20, 22, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #121416;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.prev-btn { left: -1.25rem; }
+.next-btn { right: -1.25rem; }
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.industry-vertical-card {
+  position: relative;
+  height: 380px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s var(--ease-cinematic);
+}
+
+.industry-vertical-card:hover {
+  transform: translateY(-5px);
+}
+
+.industry-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.industry-card-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(9, 10, 11, 0.9) 100%);
+}
+
+.industry-card-label {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #ffffff;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .industries-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+}

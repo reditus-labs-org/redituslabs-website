@@ -1,0 +1,131 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.15rem 0;
+  transition: background-color 0.3s var(--ease-cinematic), backdrop-filter 0.3s var(--ease-cinematic), border-bottom 0.3s var(--ease-cinematic), padding 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(9, 10, 11, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 0;
+}
+
+.navbar.navbar-light-mode {
+  color: #121416;
+}
+
+.navbar.navbar-light-mode:not(.scrolled) .navbar-brand {
+  color: #121416;
+}
+
+.navbar.navbar-light-mode.scrolled {
+  background-color: rgba(244, 242, 235, 0.95);
+  border-bottom: 1px solid rgba(18, 20, 22, 0.1);
+  color: #121416;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-left-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-brand {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  position: relative;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.navbar-light-mode .nav-link {
+  color: rgba(18, 20, 22, 0.65);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff;
+}
+
+.navbar-light-mode .nav-link:hover,
+.navbar-light-mode .nav-link.active {
+  color: #121416;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-light-mode .pill-btn-dark-outline {
+  border-radius: 4px;
+  border-color: rgba(18, 20, 22, 0.4);
+  padding: 0.52rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .page-switcher-segmented {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}

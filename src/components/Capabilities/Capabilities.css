@@ -1,0 +1,230 @@
+.capabilities-section {
+  background-color: var(--c-bone);
+  color: #121416;
+  padding: 6.5rem 0 6rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* Header Area */
+.capabilities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.75rem;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.capabilities-title-area {
+  max-width: 580px;
+}
+
+.capabilities-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 4.4vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.018em;
+  color: #121416;
+  margin: 0 0 0.85rem 0;
+  line-height: 1.1;
+}
+
+.capabilities-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: rgba(18, 20, 22, 0.65);
+  margin: 0;
+}
+
+.desktop-br {
+  display: block;
+}
+
+/* Explore Link */
+.capabilities-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #121416;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.capabilities-link-text {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: #121416;
+}
+
+.capabilities-link:hover {
+  opacity: 0.7;
+}
+
+.capabilities-link-arrow {
+  transition: transform 0.3s var(--ease-cinematic);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.capabilities-link:hover .capabilities-link-arrow {
+  transform: translateX(4px);
+}
+
+/* 5-Column Grid Layout */
+.capabilities-grid-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  position: relative;
+}
+
+/* Single Column */
+.capability-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.25rem 1.25rem 1.6rem;
+}
+
+/* Architectural Dividers */
+.col-divider {
+  position: absolute;
+  top: -16px;
+  bottom: 0;
+  width: 10px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.col-divider-left {
+  left: 0;
+}
+
+.col-divider-right {
+  right: 0;
+}
+
+.divider-svg {
+  width: 10px;
+  height: calc(100% + 16px);
+  display: block;
+  overflow: visible;
+}
+
+/* Content within each column */
+.capability-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.capability-num-row {
+  display: flex;
+  align-items: center;
+  margin-top: 0.1rem;
+  margin-bottom: 2rem;
+}
+
+.capability-number {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(18, 20, 22, 0.45);
+  letter-spacing: 0.02em;
+}
+
+/* 3D Glass Artwork Container */
+.capability-visual-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 115px;
+  margin-bottom: 2.5rem;
+}
+
+.capability-glass-img {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.45s var(--ease-cinematic), filter 0.45s var(--ease-cinematic);
+  will-change: transform;
+}
+
+.capability-col:hover .capability-glass-img {
+  transform: translateY(-4px) scale(1.04);
+  filter: drop-shadow(0 14px 22px rgba(18, 36, 42, 0.12));
+}
+
+/* Info Section */
+.capability-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.capability-title {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #121416;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.capability-desc {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: rgba(18, 20, 22, 0.55);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .capability-col:nth-child(n + 4) {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .capabilities-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .desktop-br {
+    display: none;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .capability-col {
+    padding: 0 0 1.5rem 1.5rem;
+    min-height: auto;
+  }
+}

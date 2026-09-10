@@ -1,0 +1,247 @@
+.architecture-lab-section {
+  background-color: #081118;
+  color: #ffffff;
+  padding: 7rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(
+    ellipse 75% 60% at 50% 62%,
+    rgba(24, 38, 48, 0.45) 0%,
+    rgba(8, 17, 24, 0.96) 72%,
+    #081118 100%
+  );
+}
+
+.architecture-lab-section .architecture-container {
+  max-width: 880px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.architecture-content-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Top Row: 2-Column Split */
+.architecture-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+/* Left Narrative Column */
+.architecture-left {
+  max-width: 460px;
+  position: relative;
+  z-index: 5;
+}
+
+.architecture-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: clamp(3rem, 4.6vw, 4.1rem);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0 0 1.6rem 0;
+}
+
+.architecture-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 2.2rem 0;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+
+/* Crisp Rectangular Outline Button */
+.arch-rect-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.68rem 1.35rem;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  width: fit-content;
+}
+
+.arch-rect-btn:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+.arch-arrow {
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.arch-rect-btn:hover .arch-arrow {
+  transform: translateX(3px);
+}
+
+/* Right Technology Selector Column */
+.architecture-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.6rem;
+  position: relative;
+  z-index: 5;
+}
+
+.arch-tech-container {
+  position: relative;
+  display: inline-block;
+}
+
+.arch-tech-line {
+  position: absolute;
+  left: 24px;
+  top: 2px;
+  bottom: 4px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.arch-tech-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.68rem;
+}
+
+.arch-tech-row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arch-tech-col-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.arch-indicator-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #ffffff;
+}
+
+.arch-colon {
+  font-size: 0.74rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.arch-caret {
+  font-size: 0.82rem;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.arch-indicator-faint {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.74rem;
+}
+
+.arch-tech-col-name {
+  padding-left: 16px;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.2s ease;
+  letter-spacing: 0.005em;
+}
+
+.arch-tech-row:hover .arch-tech-col-name {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.arch-tech-row.active .arch-tech-col-name {
+  color: #ffffff;
+}
+
+/* Centerpiece 3D Glass Stack Visual */
+.architecture-visual-stage {
+  position: relative;
+  margin-top: -12.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.architecture-ambient-glow {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(235, 140, 50, 0.12) 0%, rgba(210, 120, 30, 0.03) 48%, transparent 72%);
+  pointer-events: none;
+  filter: blur(55px);
+}
+
+.architecture-crystal-img {
+  width: 100%;
+  max-width: 780px;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  /* Radial feathering seamlessly merges the perimeter into #081118 with zero harsh edge */
+  mask-image: radial-gradient(ellipse 78% 74% at 50% 50%, black 50%, rgba(0, 0, 0, 0.85) 75%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 78% 74% at 50% 50%, black 50%, rgba(0, 0, 0, 0.85) 75%, transparent 95%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .architecture-top-row {
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  .architecture-right {
+    justify-content: flex-start;
+  }
+
+  .architecture-visual-stage {
+    margin-top: 1rem;
+  }
+
+  .architecture-crystal-img {
+    max-width: 520px;
+  }
+}

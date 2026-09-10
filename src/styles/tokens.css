@@ -1,0 +1,32 @@
+:root {
+  --c-ink: #090a0b;
+  --c-ink-surface: #101214;
+  --c-ink-border: rgba(255, 255, 255, 0.09);
+  
+  --c-graphite: #181a1c;
+  --c-graphite-card: #202326;
+  --c-graphite-border: rgba(255, 255, 255, 0.12);
+
+  --c-bone: #f4f2eb;
+  --c-bone-warm: #f7f5f0;
+  --c-bone-surface: #ebe8df;
+  --c-bone-border: rgba(18, 20, 22, 0.12);
+  --c-bone-subtle: rgba(18, 20, 22, 0.05);
+
+  --c-petrol: #12242a;
+  --c-petrol-light: #1b3842;
+  
+  --c-seafoam: #38bfa0;
+  --c-brass: #c9965d;
+
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  --container-max: 1440px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --section-spacing-y: clamp(5rem, 9vw, 9rem);
+
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+}

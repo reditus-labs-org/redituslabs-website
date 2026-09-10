@@ -1,0 +1,50 @@
+.real-solutions-section {
+  background-color: var(--c-bone);
+  padding: 2rem 0 6rem;
+}
+
+.real-solutions-card {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 48vh, 520px);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -20px rgba(0, 0, 0, 0.15);
+}
+
+.real-solutions-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.real-solutions-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0) 50%, rgba(9, 10, 11, 0.7) 100%);
+}
+
+.real-solutions-text {
+  position: absolute;
+  top: 35%;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: right;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .real-solutions-text {
+    right: 2rem;
+  }
+}
