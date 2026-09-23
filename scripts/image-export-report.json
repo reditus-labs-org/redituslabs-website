@@ -1,0 +1,299 @@
+﻿[
+    {
+        "name":  "solutions",
+        "file":  "public/assets/images/4k/solutions-960.jpg",
+        "width":  960,
+        "height":  540,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  133442
+    },
+    {
+        "name":  "solutions",
+        "file":  "public/assets/images/4k/solutions-1920.jpg",
+        "width":  1920,
+        "height":  1080,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  421118
+    },
+    {
+        "name":  "solutions",
+        "file":  "public/assets/images/4k/solutions-4k.jpg",
+        "width":  3840,
+        "height":  2160,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  1177139
+    },
+    {
+        "name":  "startups",
+        "file":  "public/assets/images/4k/startups-540.jpg",
+        "width":  540,
+        "height":  960,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  132177
+    },
+    {
+        "name":  "startups",
+        "file":  "public/assets/images/4k/startups-1080.jpg",
+        "width":  1080,
+        "height":  1920,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  409932
+    },
+    {
+        "name":  "startups",
+        "file":  "public/assets/images/4k/startups-4k.jpg",
+        "width":  2160,
+        "height":  3840,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  1153847
+    },
+    {
+        "name":  "education",
+        "file":  "public/assets/images/4k/education-540.jpg",
+        "width":  540,
+        "height":  960,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  131729
+    },
+    {
+        "name":  "education",
+        "file":  "public/assets/images/4k/education-1080.jpg",
+        "width":  1080,
+        "height":  1920,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  403621
+    },
+    {
+        "name":  "education",
+        "file":  "public/assets/images/4k/education-4k.jpg",
+        "width":  2160,
+        "height":  3840,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  1133714
+    },
+    {
+        "name":  "healthcare",
+        "file":  "public/assets/images/4k/healthcare-540.jpg",
+        "width":  540,
+        "height":  960,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  109821
+    },
+    {
+        "name":  "healthcare",
+        "file":  "public/assets/images/4k/healthcare-1080.jpg",
+        "width":  1080,
+        "height":  1920,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  331309
+    },
+    {
+        "name":  "healthcare",
+        "file":  "public/assets/images/4k/healthcare-4k.jpg",
+        "width":  2160,
+        "height":  3840,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  957541
+    },
+    {
+        "name":  "retail",
+        "file":  "public/assets/images/4k/retail-540.jpg",
+        "width":  540,
+        "height":  960,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  142238
+    },
+    {
+        "name":  "retail",
+        "file":  "public/assets/images/4k/retail-1080.jpg",
+        "width":  1080,
+        "height":  1920,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  428717
+    },
+    {
+        "name":  "retail",
+        "file":  "public/assets/images/4k/retail-4k.jpg",
+        "width":  2160,
+        "height":  3840,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  1187212
+    },
+    {
+        "name":  "finance",
+        "file":  "public/assets/images/4k/finance-540.jpg",
+        "width":  540,
+        "height":  960,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  143604
+    },
+    {
+        "name":  "finance",
+        "file":  "public/assets/images/4k/finance-1080.jpg",
+        "width":  1080,
+        "height":  1920,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  444047
+    },
+    {
+        "name":  "finance",
+        "file":  "public/assets/images/4k/finance-4k.jpg",
+        "width":  2160,
+        "height":  3840,
+        "sourceWidth":  941,
+        "sourceHeight":  1672,
+        "bytes":  1221304
+    },
+    {
+        "name":  "insight_ai",
+        "file":  "public/assets/images/4k/insight_ai-960.jpg",
+        "width":  960,
+        "height":  540,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  166409
+    },
+    {
+        "name":  "insight_ai",
+        "file":  "public/assets/images/4k/insight_ai-1920.jpg",
+        "width":  1920,
+        "height":  1080,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  498319
+    },
+    {
+        "name":  "insight_ai",
+        "file":  "public/assets/images/4k/insight_ai-4k.jpg",
+        "width":  3840,
+        "height":  2160,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  1342655
+    },
+    {
+        "name":  "insight_production",
+        "file":  "public/assets/images/4k/insight_production-960.jpg",
+        "width":  960,
+        "height":  540,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  156534
+    },
+    {
+        "name":  "insight_production",
+        "file":  "public/assets/images/4k/insight_production-1920.jpg",
+        "width":  1920,
+        "height":  1080,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  463656
+    },
+    {
+        "name":  "insight_production",
+        "file":  "public/assets/images/4k/insight_production-4k.jpg",
+        "width":  3840,
+        "height":  2160,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  1251027
+    },
+    {
+        "name":  "insight_scale",
+        "file":  "public/assets/images/4k/insight_scale-960.jpg",
+        "width":  960,
+        "height":  540,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  153998
+    },
+    {
+        "name":  "insight_scale",
+        "file":  "public/assets/images/4k/insight_scale-1920.jpg",
+        "width":  1920,
+        "height":  1080,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  456743
+    },
+    {
+        "name":  "insight_scale",
+        "file":  "public/assets/images/4k/insight_scale-4k.jpg",
+        "width":  3840,
+        "height":  2160,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  1243085
+    },
+    {
+        "name":  "case",
+        "file":  "public/assets/images/4k/case-960.jpg",
+        "width":  960,
+        "height":  540,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  153364
+    },
+    {
+        "name":  "case",
+        "file":  "public/assets/images/4k/case-1920.jpg",
+        "width":  1920,
+        "height":  1080,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  453872
+    },
+    {
+        "name":  "case",
+        "file":  "public/assets/images/4k/case-4k.jpg",
+        "width":  3840,
+        "height":  2160,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  1242279
+    },
+    {
+        "name":  "footer",
+        "file":  "public/assets/images/4k/footer-960.jpg",
+        "width":  960,
+        "height":  540,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  119977
+    },
+    {
+        "name":  "footer",
+        "file":  "public/assets/images/4k/footer-1920.jpg",
+        "width":  1920,
+        "height":  1080,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  345510
+    },
+    {
+        "name":  "footer",
+        "file":  "public/assets/images/4k/footer-4k.jpg",
+        "width":  3840,
+        "height":  2160,
+        "sourceWidth":  1672,
+        "sourceHeight":  941,
+        "bytes":  977550
+    }
+]

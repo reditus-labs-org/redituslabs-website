@@ -1,0 +1,339 @@
+@font-face {
+  font-family: 'Dujitsu';
+  src: url('/fonts/Dujitsu.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.hero-editorial-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0c1015;
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  font-family: 'Dujitsu', var(--font-sans);
+}
+
+/* 1. Full-bleed Background Architectural Visual & Video */
+.hero-editorial-bg-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #0c1015;
+}
+
+.hero-editorial-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  will-change: transform, opacity;
+}
+
+.hero-editorial-bg-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-editorial-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  will-change: transform, opacity;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .hero-editorial-bg-img,
+  .hero-editorial-bg-video {
+    object-position: center center;
+  }
+}
+
+.hero-editorial-ambient-overlay {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      ellipse at 70% 30%,
+      rgba(12, 16, 21, 0.1) 0%,
+      rgba(12, 16, 21, 0.5) 60%,
+      rgba(12, 16, 21, 0.85) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(12, 16, 21, 0.45) 0%,
+      rgba(12, 16, 21, 0.15) 30%,
+      rgba(12, 16, 21, 0.5) 70%,
+      rgba(12, 16, 21, 0.95) 100%
+    );
+  pointer-events: none;
+}
+
+/* 2. Main Stage & Composition */
+.hero-editorial-stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: clamp(6.5rem, 15vh, 9.5rem) clamp(2.5rem, 5.5vw, 4.5rem) clamp(3rem, 7vh, 5rem);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Left Narrative Block */
+.hero-editorial-left-block {
+  max-width: 490px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 5;
+}
+
+.hero-editorial-eyebrow {
+  font-family: 'Dujitsu', var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.52);
+  margin-bottom: 2.2rem;
+  font-weight: 500;
+}
+
+/* Editorial Headline */
+.hero-editorial-headline {
+  font-family: 'Dujitsu', 'Syne', sans-serif;
+  font-weight: normal;
+  font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+  margin-bottom: 2.2rem;
+}
+
+.serif-line-wrap {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+}
+
+.serif-line {
+  display: block;
+  transform: translateY(0);
+  will-change: transform, opacity;
+}
+
+.serif-line.white-text {
+  color: #ffffff;
+}
+
+.serif-line.champagne-text {
+  color: #cca26c; /* Warm muted brass / champagne matching reference */
+}
+
+/* Supporting Body Text */
+.hero-editorial-body {
+  font-family: var(--font-sans);
+  font-size: clamp(0.85rem, 1.1vw, 0.94rem);
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.68);
+  margin-bottom: 2.6rem;
+  font-weight: 400;
+  max-width: 440px;
+  letter-spacing: 0.01em;
+  will-change: transform, opacity;
+}
+
+/* CTA Group */
+.hero-editorial-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  will-change: transform, opacity;
+}
+
+.hero-primary-white-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: #ffffff;
+  color: #0c0d0e;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.75rem 1.35rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s var(--ease-cinematic);
+  text-decoration: none;
+}
+
+.hero-primary-white-btn:hover {
+  background-color: #eaeaea;
+  transform: translateY(-1px);
+}
+
+.hero-play-watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-play-watch-btn:hover {
+  color: #ffffff;
+}
+
+.play-ring {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  transition: all 0.3s var(--ease-cinematic);
+}
+
+.hero-play-watch-btn:hover .play-ring {
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.05);
+}
+
+/* 4. Right-side Architecture Pillar Text */
+.hero-editorial-right-pillar {
+  position: absolute;
+  right: clamp(2.5rem, 5.5vw, 4.5rem);
+  top: 52%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  align-items: flex-start;
+  will-change: opacity;
+}
+
+.pillar-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.pillar-hairline {
+  width: 32px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.pillar-motto-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  font-family: 'Dujitsu', var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+}
+
+.pillar-accent-note {
+  position: absolute;
+  right: clamp(2.5rem, 5.5vw, 4.5rem);
+  bottom: clamp(3rem, 7.5vh, 5.5rem);
+  font-family: 'Dujitsu', var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.65;
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+/* 5. Bottom Left Scroll Indicator */
+.hero-editorial-scroll-row {
+  position: absolute;
+  bottom: clamp(3rem, 7.5vh, 5.5rem);
+  left: clamp(2.5rem, 5.5vw, 4.5rem);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+
+.editorial-scroll-track {
+  width: 1px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial-scroll-circle {
+  position: absolute;
+  top: 0;
+  left: -2.5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  animation: editorialScrollPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes editorialScrollPulse {
+  0% { top: 0; opacity: 0.2; }
+  50% { top: 26px; opacity: 1; }
+  100% { top: 32px; opacity: 0; }
+}
+
+.editorial-scroll-label {
+  font-family: 'Dujitsu', var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .hero-editorial-header {
+    padding: 1.75rem 2rem;
+  }
+  .hero-header-center {
+    display: none;
+  }
+  .hero-editorial-stage {
+    padding: 0 2rem;
+  }
+  .hero-editorial-right-pillar {
+    display: none;
+  }
+  .hero-editorial-scroll-row {
+    left: 2rem;
+  }
+}

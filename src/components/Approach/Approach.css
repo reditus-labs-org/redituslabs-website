@@ -1,0 +1,321 @@
+.approach-section {
+  background-color: var(--c-bone);
+  color: #121416;
+  padding: 6.5rem 0 7.5rem;
+  overflow: hidden;
+}
+
+/* Hero Header Grid */
+.approach-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.approach-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(18, 20, 22, 0.45);
+  margin-bottom: 1.25rem;
+}
+
+.approach-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 4.8vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: #121416;
+  margin-bottom: 1.35rem;
+}
+
+.approach-subline {
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: rgba(18, 20, 22, 0.62);
+}
+
+/* Right-side Indicator Guide */
+.approach-indicator-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 0.5rem;
+}
+
+.approach-top-guide-line {
+  width: 1px;
+  height: 64px;
+  background-color: rgba(18, 20, 22, 0.22);
+  margin-bottom: 1.25rem;
+}
+
+.approach-side-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  color: rgba(18, 20, 22, 0.52);
+  text-align: center;
+}
+
+.approach-bottom-accent-dash {
+  width: 24px;
+  height: 1px;
+  background-color: rgba(18, 20, 22, 0.25);
+  margin-top: 1.25rem;
+}
+
+/* Curved Architectural Terrace Banner with Seamless Bottom Feathered Fade */
+.approach-cinematic-banner {
+  width: 100%;
+  height: clamp(620px, 84vh, 980px);
+  position: relative;
+  overflow: hidden;
+  margin: 1.5rem 0 5rem;
+  -webkit-mask-image: linear-gradient(to bottom, black 78%, rgba(0, 0, 0, 0.85) 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 78%, rgba(0, 0, 0, 0.85) 90%, transparent 100%);
+}
+
+.approach-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.approach-banner-fade-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to bottom, transparent, var(--c-bone));
+  pointer-events: none;
+}
+
+/* 5 Process Steps Timeline Wrap */
+.approach-timeline-wrap {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto 4.5rem;
+}
+
+/* Continuous vertical hairline track running down the left */
+.approach-vertical-track {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 40px;
+  width: 1px;
+  background-color: rgba(18, 20, 22, 0.18);
+  z-index: 1;
+}
+
+.approach-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.approach-step-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 60px;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: transform 0.25s ease;
+}
+
+.approach-step-row:hover {
+  transform: translateX(4px);
+}
+
+/* Left Number Column with Dual Indices Mathematically Centered on the Line */
+.step-num-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 2;
+}
+
+.step-num-left {
+  color: rgba(18, 20, 22, 0.32);
+  text-align: right;
+  padding-right: 8px;
+}
+
+.step-num-left.step-colon {
+  color: rgba(18, 20, 22, 0.45);
+  font-weight: 600;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.step-num-right {
+  color: rgba(18, 20, 22, 0.85);
+  font-weight: 500;
+  text-align: left;
+  padding-left: 8px;
+}
+
+/* Center Content Column: Title and Subtitle */
+.step-body-col {
+  padding-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.step-title {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #121416;
+  transition: color 0.2s ease;
+}
+
+.approach-step-row:hover .step-title {
+  color: #000000;
+}
+
+.step-desc {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: rgba(18, 20, 22, 0.58);
+  line-height: 1.4;
+}
+
+/* Right Icon Column with Delicate Architectural Sketch SVGs */
+.step-icon-col {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.step-sketch-icon-wrap {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(18, 20, 22, 0.48);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.approach-svg-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.approach-step-row:hover .step-sketch-icon-wrap {
+  color: #121416;
+  transform: scale(1.08);
+}
+
+/* Bottom CTA Row: Aligned With Columns Above */
+.approach-bottom-cta-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 60px;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+
+.cta-flank-dash {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: rgba(18, 20, 22, 0.32);
+}
+
+.cta-left-dash {
+  text-align: center;
+}
+
+.approach-rect-btn {
+  justify-self: start;
+  margin-left: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.68rem 1.5rem;
+  border: 1px solid rgba(18, 20, 22, 0.28);
+  border-radius: 3px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #121416;
+  background: transparent;
+  transition: all 0.25s var(--ease-cinematic);
+  text-decoration: none;
+}
+
+.approach-rect-btn:hover {
+  border-color: rgba(18, 20, 22, 0.8);
+  background-color: rgba(18, 20, 22, 0.04);
+  transform: translateY(-1px);
+}
+
+.approach-rect-btn .btn-arrow {
+  transition: transform 0.25s var(--ease-cinematic);
+}
+
+.approach-rect-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.cta-right-dash {
+  text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .approach-section {
+    padding: 5rem 0 6rem;
+  }
+  .approach-cinematic-banner {
+    height: clamp(440px, 68vh, 640px);
+    margin: 1.25rem 0 3.5rem;
+  }
+  .approach-banner-img {
+    object-position: center center;
+  }
+  .approach-hero-grid {
+    grid-template-columns: 1fr auto;
+  }
+  .approach-step-row {
+    grid-template-columns: 65px 1fr auto;
+  }
+  .approach-vertical-track {
+    left: 32.5px;
+  }
+  .step-num-col {
+    width: 65px;
+  }
+  .step-body-col {
+    padding-left: 1.25rem;
+  }
+  .approach-bottom-cta-row {
+    grid-template-columns: 65px 1fr auto;
+  }
+  .approach-rect-btn {
+    margin-left: 1.25rem;
+  }
+}
+

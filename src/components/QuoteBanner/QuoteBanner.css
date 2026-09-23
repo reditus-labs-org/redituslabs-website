@@ -1,0 +1,91 @@
+.quote-banner-section {
+  position: relative;
+  background-color: var(--c-ink);
+  color: #ffffff;
+  padding: 8rem 0;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+}
+
+.quote-banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.quote-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.35;
+  filter: contrast(1.1) brightness(0.9);
+}
+
+.quote-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 50%, rgba(9, 10, 11, 0.7) 0%, rgba(9, 10, 11, 0.95) 100%);
+}
+
+.quote-banner-container {
+  position: relative;
+  z-index: 2;
+}
+
+.quote-banner-content {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.quote-text {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+.quote-watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  width: fit-content;
+  transition: color 0.3s ease;
+}
+
+.quote-watch-btn:hover {
+  color: #ffffff;
+}
+
+.quote-play-bubble {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--ease-cinematic);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.quote-watch-btn:hover .quote-play-bubble {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
