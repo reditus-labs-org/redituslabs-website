@@ -21,7 +21,10 @@ export const QuoteBanner: React.FC = () => {
       <div className="container quote-banner-container">
         <div ref={quoteRef} className="quote-banner-content">
           <blockquote className="quote-text">
-            “Technology is a means. People, progress and possibility are the outcome.”
+            “<span className="text-light">Technology is a means.</span>{' '}
+            <span className="text-medium">People, progress</span>{' '}
+            <span className="text-bold">and possibility</span>{' '}
+            <span className="text-black">are the outcome.</span>”
           </blockquote>
 
           <a href="#story" className="quote-watch-btn">

@@ -21,21 +21,40 @@
 }
 
 .capabilities-heading {
-  font-family: var(--font-serif);
-  font-size: clamp(2.6rem, 4.4vw, 3.5rem);
-  font-weight: 400;
-  letter-spacing: -0.018em;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.8vw, 4rem);
+  letter-spacing: -0.025em;
   color: #121416;
   margin: 0 0 0.85rem 0;
-  line-height: 1.1;
+  line-height: 1.08;
+}
+
+.capabilities-heading .text-light {
+  font-weight: var(--fw-light);
+  color: rgba(18, 20, 22, 0.55);
+}
+
+.capabilities-heading .text-black {
+  font-weight: var(--fw-black);
+  color: #121416;
 }
 
 .capabilities-subtitle {
   font-family: var(--font-sans);
   font-size: 1.05rem;
-  line-height: 1.45;
-  color: rgba(18, 20, 22, 0.65);
+  line-height: 1.5;
+  color: rgba(18, 20, 22, 0.7);
   margin: 0;
+}
+
+.capabilities-subtitle .text-medium {
+  font-weight: var(--fw-medium);
+  color: #121416;
+}
+
+.capabilities-subtitle .text-light {
+  font-weight: var(--fw-light);
+  color: rgba(18, 20, 22, 0.6);
 }
 
 .desktop-br {
@@ -140,11 +159,11 @@
 }
 
 .capability-number {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: rgba(18, 20, 22, 0.45);
-  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: var(--fw-medium);
+  color: rgba(18, 20, 22, 0.4);
+  letter-spacing: 0.04em;
 }
 
 /* 3D Glass Artwork Container */
@@ -179,10 +198,10 @@
 }
 
 .capability-title {
-  font-family: var(--font-sans);
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.25;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
   color: #121416;
   letter-spacing: -0.015em;
   margin: 0;
@@ -191,7 +210,8 @@
 .capability-desc {
   font-family: var(--font-sans);
   font-size: 0.88rem;
-  color: rgba(18, 20, 22, 0.55);
+  font-weight: var(--fw-regular);
+  color: rgba(18, 20, 22, 0.6);
   line-height: 1.45;
   margin: 0;
 }

@@ -49,12 +49,31 @@
 }
 
 .quote-text {
-  font-family: var(--font-sans);
-  font-size: clamp(2rem, 3.8vw, 3.4rem);
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
   line-height: 1.25;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: #ffffff;
+}
+
+.quote-text .text-light {
+  font-weight: var(--fw-light);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.quote-text .text-medium {
+  font-weight: var(--fw-medium);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.quote-text .text-bold {
+  font-weight: var(--fw-bold);
+  color: #ffffff;
+}
+
+.quote-text .text-black {
+  font-weight: var(--fw-black);
+  color: var(--c-champagne-light, #f1e2cd);
 }
 
 .quote-watch-btn {

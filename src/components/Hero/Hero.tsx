@@ -147,7 +147,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConversation, onNavigate }) =>
           poster="/assets/images/hero_landscape_pc.png"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
-          <source src="/Samurai_standing_in_windblown_grass_20260922234930.mp4" type="video/mp4" />
         </video>
         <div className="hero-editorial-ambient-overlay" />
       </div>
@@ -162,13 +161,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConversation, onNavigate }) =>
 
           <h1 ref={headlineRef} className="hero-editorial-headline">
             <span className="serif-line-wrap">
-              <span ref={line1Ref} className="serif-line white-text">From</span>
+              <span ref={line1Ref} className="serif-line line-light white-text">From</span>
             </span>
             <span className="serif-line-wrap">
-              <span ref={line2Ref} className="serif-line white-text">ideas to</span>
+              <span ref={line2Ref} className="serif-line line-medium white-text">ideas to</span>
             </span>
             <span className="serif-line-wrap">
-              <span ref={line3Ref} className="serif-line champagne-text">possibilities.</span>
+              <span ref={line3Ref} className="serif-line line-black champagne-text">possibilities.</span>
             </span>
           </h1>
 
@@ -214,9 +213,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConversation, onNavigate }) =>
           <div className="pillar-block">
             <div className="pillar-hairline top-hairline" />
             <div className="pillar-motto-stack">
-              <span>RETURN.</span>
-              <span>REIMAGINE.</span>
-              <span>REALIZE.</span>
+              <span className="text-light">RETURN.</span>
+              <span className="text-medium">REIMAGINE.</span>
+              <span className="text-bold">REALIZE.</span>
             </div>
             <div className="pillar-hairline bottom-hairline" />
           </div>
@@ -224,8 +223,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConversation, onNavigate }) =>
 
         {/* Lower Right Secondary Editorial Note */}
         <div className="pillar-accent-note">
-          SAME PROBLEMS.<br />
-          HIGHER POSSIBILITIES.
+          <span className="text-light">SAME PROBLEMS.</span><br />
+          <span className="text-medium">HIGHER POSSIBILITIES.</span>
         </div>
       </div>
 

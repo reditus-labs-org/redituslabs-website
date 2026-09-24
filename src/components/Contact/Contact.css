@@ -59,21 +59,40 @@
 }
 
 .contact-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 4.4vw, 3.8rem);
-  line-height: 1.1;
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.6vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
   color: #ffffff;
   margin: 0 0 1.25rem 0;
+}
+
+.contact-title .text-light {
+  font-weight: var(--fw-light);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-title .text-black {
+  font-weight: var(--fw-black);
+  color: var(--c-champagne-light, #f1e2cd);
 }
 
 .contact-subline {
   font-family: var(--font-sans);
   font-size: 1.05rem;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0 0 2.5rem 0;
+}
+
+.contact-subline .text-medium {
+  font-weight: var(--fw-medium);
+  color: #ffffff;
+}
+
+.contact-subline .text-light {
+  font-weight: var(--fw-light);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-form {
@@ -187,12 +206,26 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  letter-spacing: 0.22em;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
   color: rgba(255, 255, 255, 0.72);
-  font-weight: 500;
   user-select: none;
+}
+
+.accent-words .text-light {
+  font-weight: var(--fw-light);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.accent-words .text-medium {
+  font-weight: var(--fw-medium);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.accent-words .text-bold {
+  font-weight: var(--fw-bold);
+  color: #ffffff;
 }
 
 .accent-words span {

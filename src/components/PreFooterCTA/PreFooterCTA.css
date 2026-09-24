@@ -13,21 +13,44 @@
 }
 
 .prefooter-title {
-  font-family: var(--font-sans);
-  font-size: clamp(2.4rem, 3.8vw, 3.4rem);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.1;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
   color: #121416;
   margin-bottom: 1.25rem;
 }
 
+.prefooter-title .text-light {
+  font-weight: var(--fw-light);
+  color: rgba(18, 20, 22, 0.55);
+}
+
+.prefooter-title .text-black {
+  font-weight: var(--fw-black);
+  color: #121416;
+}
+
 .prefooter-subtitle {
   font-family: var(--font-sans);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   line-height: 1.6;
-  color: rgba(18, 20, 22, 0.65);
+  color: rgba(18, 20, 22, 0.7);
   margin-bottom: 2.5rem;
+}
+
+.prefooter-subtitle .text-medium {
+  font-weight: var(--fw-medium);
+  color: #121416;
+}
+
+.prefooter-subtitle .text-regular {
+  font-weight: var(--fw-regular);
+}
+
+.prefooter-subtitle .text-light {
+  font-weight: var(--fw-light);
+  color: rgba(18, 20, 22, 0.6);
 }
 
 .prefooter-buttons {

@@ -42,11 +42,12 @@ export const Contact: React.FC = () => {
           {/* Left Form Column */}
           <div className="contact-form-col">
             <h2 className="contact-title">
-              Let’s build<br />what’s next.
+              <span className="text-light">Let’s build</span><br />
+              <span className="text-black">what’s next.</span>
             </h2>
             <p className="contact-subline">
-              Tell us about your idea, challenge or opportunity.<br />
-              We’ll get back to you within 1–2 business days.
+              <span className="text-medium">Tell us about your idea, challenge or opportunity.</span><br />
+              <span className="text-light">We’ll get back to you within 1–2 business days.</span>
             </p>
 
             {submitted ? (
@@ -110,9 +111,9 @@ export const Contact: React.FC = () => {
               <div className="accent-content-group">
                 <div className="accent-vertical-line" aria-hidden="true" />
                 <div className="accent-words">
-                  <span>RETURN.</span>
-                  <span>REIMAGINE.</span>
-                  <span>REALIZE.</span>
+                  <span className="text-light">RETURN.</span>
+                  <span className="text-medium">REIMAGINE.</span>
+                  <span className="text-bold">REALIZE.</span>
                 </div>
               </div>
               <div className="accent-bottom-line" aria-hidden="true" />

@@ -15,9 +15,14 @@ export const PreFooterCTA: React.FC<PreFooterCTAProps> = ({ onStartConversation 
     <section className="prefooter-cta-section">
       <div className="container">
         <div ref={contentRef} className="prefooter-cta-content">
-          <h2 className="prefooter-title">Ready to build what’s next?</h2>
+          <h2 className="prefooter-title">
+            <span className="text-light">Ready to build </span>
+            <span className="text-black">what’s next?</span>
+          </h2>
           <p className="prefooter-subtitle">
-            Whether you’re starting from an idea, scaling a product, or reimagining what’s possible — we’re here to help.
+            <span className="text-medium">Whether you’re starting from an idea,</span>{' '}
+            <span className="text-regular">scaling a product, or reimagining what’s possible</span> —{' '}
+            <span className="text-light">we’re here to engineer the outcome.</span>
           </p>
 
           <div className="prefooter-buttons">

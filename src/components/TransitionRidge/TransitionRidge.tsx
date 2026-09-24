@@ -21,8 +21,8 @@ export const TransitionRidge: React.FC = () => {
         <div ref={textRef} className="transition-ridge-content">
           <div className="transition-ridge-cross">✦</div>
           <div className="transition-ridge-text">
-            SAME PROBLEMS.<br />
-            HIGHER POSSIBILITIES.
+            <span className="text-light">SAME PROBLEMS.</span><br />
+            <span className="text-bold">HIGHER POSSIBILITIES.</span>
           </div>
         </div>
       </div>

@@ -20,10 +20,10 @@ export const RealSolutions: React.FC = () => {
           <div className="real-solutions-overlay" />
 
           <div ref={textRef} className="real-solutions-text">
-            <span>REAL</span>
-            <span>SOLUTIONS</span>
-            <span>FOR A WIDER</span>
-            <span>TOMORROW.</span>
+            <span className="sol-line-1">REAL</span>
+            <span className="sol-line-2">SOLUTIONS</span>
+            <span className="sol-line-3">FOR A WIDER</span>
+            <span className="sol-line-4">TOMORROW.</span>
           </div>
         </div>
       </div>

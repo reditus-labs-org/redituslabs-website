@@ -1,4 +1,4 @@
-﻿# REDITUS website
+# REDITUS website
 
 Run `npm install`, then `npm run dev`. On Windows with PowerShell script restrictions, use `npm.cmd`.
 
@@ -14,8 +14,6 @@ Set `VITE_SOCIAL_LINKEDIN`, `VITE_SOCIAL_X`, `VITE_SOCIAL_YOUTUBE`, and `VITE_SO
 
 The supplied reference only defines three page layouts. Additional destination copy is an editorial starting point. The solution examples are explicitly labeled illustrative; approve the articles and replace provisional privacy/terms notes before publication. The story button opens a three-chapter visual story because no studio video was provided.
 
-## Reference assets and verification
+## Reference assets
 
-`refernce image/ChatGPT Image Sep 6, 2026, 05_44_15 PM.png` is the supplied 1024 × 1536 composite. The old `reference_*.jpg` crops are no longer used by the website. Eleven matching scenes were reconstructed with built-in image generation and exported to `public/assets/images/4k/`. Landscape masters are 3840 × 2160 and portrait masters are 2160 × 3840; these are high-quality bicubic exports from new 1672 × 941 / 941 × 1672 generated artwork, not native 4K generations or enlarged reference thumbnails. Responsive image sets select lighter versions for cards. Original generated artwork is preserved in `output/imagegen/`. The full prompts and generation provenance are recorded in `scripts/image-assets.json`; `scripts/export-image-assets.ps1` reproduces exports and `scripts/image-export-report.json` records source and output dimensions. High-resolution existing assets remain in use for the completed hero, approach and contact imagery.
-
-`node scripts/verify-site.mjs` checks navigation, cross-page scroll alignment, carousels, form behavior, direct destinations, images, browser back, and mobile menu behavior against a running local server. It uses the existing Puppeteer dependency and installed Chrome; change its executable path for a different OS. It also captures the three main pages at desktop and mobile sizes.
+Eleven matching scenes were reconstructed with built-in image generation and exported to `public/assets/images/4k/`. High-resolution assets remain in use for the completed hero, approach, and contact imagery.

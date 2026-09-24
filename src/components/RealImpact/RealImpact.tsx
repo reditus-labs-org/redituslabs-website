@@ -13,18 +13,18 @@ export const RealImpact: React.FC = () => {
         
         <div ref={containerRef} className="real-impact-grid">
           <div className="impact-col">
-            <div className="impact-number">50+</div>
-            <div className="impact-label">Products delivered</div>
+            <div className="impact-number text-black">50+</div>
+            <div className="impact-label text-regular">Products delivered</div>
           </div>
 
           <div className="impact-col">
-            <div className="impact-number">7+</div>
-            <div className="impact-label">Industries served</div>
+            <div className="impact-number text-black">7+</div>
+            <div className="impact-label text-regular">Industries served</div>
           </div>
 
           <div className="impact-col">
-            <div className="impact-number">∞</div >
-            <div className="impact-label">Possibilities ahead</div>
+            <div className="impact-number text-black">∞</div>
+            <div className="impact-label text-regular">Possibilities ahead</div>
           </div>
         </div>
       </div>

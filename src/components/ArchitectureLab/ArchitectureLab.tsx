@@ -26,7 +26,8 @@ export const ArchitectureLab: React.FC = () => {
           <div className="architecture-top-row">
             <div className="architecture-left">
               <h2 className="architecture-title">
-                Built for<br />what’s next.
+                <span className="text-light">Built for</span><br />
+                <span className="text-black">what’s next.</span>
               </h2>
               <p className="architecture-desc">
                 Modern architectures. Scalable systems.<br />

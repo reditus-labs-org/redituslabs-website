@@ -81,13 +81,18 @@ export const Approach: React.FC = () => {
         {/* Header Grid */}
         <div className="approach-hero-grid">
           <div className="approach-headline-col">
-            <div className="approach-eyebrow">OUR APPROACH</div>
+            <div className="approach-eyebrow">
+              <span className="text-light">OUR </span>
+              <span className="text-bold">APPROACH</span>
+            </div>
             <h1 className="approach-headline">
-              A clearer path<br />to what’s possible.
+              <span className="text-light">A clearer path</span><br />
+              <span className="text-black">to what’s possible.</span>
             </h1>
             <p className="approach-subline">
-              A structured approach. Real collaboration.<br />
-              Measurable outcomes.
+              <span className="text-medium">A structured approach.</span>{' '}
+              <span className="text-regular">Real collaboration.</span>{' '}
+              <span className="text-light">Measurable outcomes.</span>
             </p>
           </div>
 

@@ -20,17 +20,40 @@
 }
 
 .home-footer-brand {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
   letter-spacing: 0.12em;
 }
 
+.home-footer-brand .text-light {
+  font-weight: var(--fw-light);
+  color: rgba(18, 20, 22, 0.7);
+}
+
+.home-footer-brand .text-black {
+  font-weight: var(--fw-black);
+  color: #121416;
+}
+
 .home-footer-motto {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  color: rgba(18, 20, 22, 0.45);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(18, 20, 22, 0.55);
+}
+
+.home-footer-motto .text-light {
+  font-weight: var(--fw-light);
+}
+
+.home-footer-motto .text-medium {
+  font-weight: var(--fw-medium);
+  color: rgba(18, 20, 22, 0.75);
+}
+
+.home-footer-motto .text-bold {
+  font-weight: var(--fw-bold);
+  color: #121416;
 }
 
 .home-footer-nav {

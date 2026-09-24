@@ -1,5 +1,37 @@
 @import './tokens.css';
 
+@font-face {
+  font-family: 'Albra Display';
+  src: url('/fonts/Albra-Display-Flex.woff2') format('woff2-variations'),
+       url('/fonts/Albra-Display-Flex.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Albra Display';
+  src: url('/fonts/Albra-Display-Italic-Flex.woff2') format('woff2-variations'),
+       url('/fonts/Albra-Display-Italic-Flex.woff2') format('woff2');
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('/fonts/Albra-Flex.woff2') format('woff2-variations'),
+       url('/fonts/Albra-Flex.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('/fonts/Albra-Italic-Flex.woff2') format('woff2-variations'),
+       url('/fonts/Albra-Italic-Flex.woff2') format('woff2');
+  font-style: italic;
+  font-display: swap;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -22,6 +54,41 @@ body {
   overflow-x: hidden;
   line-height: 1.55;
   font-size: 1rem;
+  font-variation-settings: 'wght' var(--wght-regular);
+}
+
+/* Base Headings: Default to Regular so titles are not uniformly thick */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-feature-settings: "dlig" 1, "liga" 1, "calt" 1;
+  font-weight: var(--fw-regular);
+  font-variation-settings: 'wght' var(--wght-regular);
+}
+
+/* 5 Specimen Weight Classes: Calibrated to Albra Display variation axis */
+.text-light, .fw-light, .font-light {
+  font-weight: var(--fw-light) !important;
+  font-variation-settings: 'wght' var(--wght-light) !important;
+}
+
+.text-regular, .fw-regular, .font-regular {
+  font-weight: var(--fw-regular) !important;
+  font-variation-settings: 'wght' var(--wght-regular) !important;
+}
+
+.text-medium, .fw-medium, .font-medium {
+  font-weight: var(--fw-medium) !important;
+  font-variation-settings: 'wght' var(--wght-medium) !important;
+}
+
+.text-bold, .fw-bold, .font-bold {
+  font-weight: var(--fw-bold) !important;
+  font-variation-settings: 'wght' var(--wght-bold) !important;
+}
+
+.text-black, .fw-black, .font-black {
+  font-weight: var(--fw-black) !important;
+  font-variation-settings: 'wght' var(--wght-black) !important;
 }
 
 .page-wrapper {
@@ -68,8 +135,14 @@ img {
   padding-right: var(--gutter);
 }
 
-.font-display { font-family: var(--font-display); }
-.font-serif { font-family: var(--font-serif); }
+.font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "dlig" 1, "liga" 1, "calt" 1;
+}
+.font-serif {
+  font-family: var(--font-serif);
+  font-feature-settings: "dlig" 1, "liga" 1, "calt" 1;
+}
 .font-mono { font-family: var(--font-mono); }
 
 .pill-btn {

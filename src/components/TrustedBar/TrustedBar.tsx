@@ -16,7 +16,10 @@ export const TrustedBar: React.FC = () => {
   return (
     <section className="trusted-bar">
       <div className="container">
-        <div className="trusted-title">TRUSTED ACROSS INDUSTRIES</div>
+        <div className="trusted-title">
+          <span className="text-light">TRUSTED ACROSS </span>
+          <span className="text-bold">INDUSTRIES</span>
+        </div>
         <div className="trusted-grid">
           {industries.map((item, idx) => {
             const Icon = item.icon;

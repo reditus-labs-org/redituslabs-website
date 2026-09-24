@@ -30,17 +30,42 @@
 
 .real-solutions-text {
   position: absolute;
-  top: 35%;
+  top: 30%;
   right: 4rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.25em;
-  color: rgba(255, 255, 255, 0.85);
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-feature-settings: "dlig" 1, "liga" 1, "calt" 1;
+  color: rgba(255, 255, 255, 0.95);
   text-align: right;
   z-index: 2;
+}
+
+.real-solutions-text .sol-line-1 {
+  font-weight: 300;
+  font-size: clamp(0.78rem, 1.2vw, 1.05rem);
+  opacity: 0.85;
+  letter-spacing: 0.28em;
+}
+
+.real-solutions-text .sol-line-2 {
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.5vw, 1.35rem);
+  letter-spacing: 0.22em;
+}
+
+.real-solutions-text .sol-line-3 {
+  font-weight: 700;
+  font-size: clamp(1.15rem, 1.8vw, 1.65rem);
+  letter-spacing: 0.16em;
+}
+
+.real-solutions-text .sol-line-4 {
+  font-weight: 900;
+  font-size: clamp(1.35rem, 2.3vw, 2.1rem);
+  letter-spacing: 0.08em;
+  color: #cca26c;
 }
 
 @media (max-width: 768px) {

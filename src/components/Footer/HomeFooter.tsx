@@ -12,8 +12,14 @@ export const HomeFooter: React.FC<HomeFooterProps> = ({ onNavigate }) => {
       <div className="container">
         <div className="home-footer-inner">
           <div className="home-footer-brand-wrap">
-            <span className="home-footer-brand">REDITUS</span>
-            <span className="home-footer-motto">RETURN. REIMAGINE. REALIZE.</span>
+            <span className="home-footer-brand">
+              <span className="text-light">REDI</span><span className="text-black">TUS</span>
+            </span>
+            <span className="home-footer-motto">
+              <span className="text-light">RETURN. </span>
+              <span className="text-medium">REIMAGINE. </span>
+              <span className="text-bold">REALIZE.</span>
+            </span>
           </div>
 
           <nav className="home-footer-nav" aria-label="Footer Navigation">

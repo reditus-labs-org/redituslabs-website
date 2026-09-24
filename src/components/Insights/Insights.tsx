@@ -17,8 +17,15 @@ export const Insights: React.FC = () => {
       <div className="container">
         <div className="insights-header">
           <div>
-            <h2 className="insights-title">Insights</h2>
-            <div className="insights-subline">IDEAS. ENGINEERING. PERSPECTIVE.</div>
+            <h2 className="insights-title">
+              <span className="text-light">Latest </span>
+              <span className="text-black">Insights.</span>
+            </h2>
+            <div className="insights-subline">
+              <span className="text-regular">IDEAS. </span>
+              <span className="text-medium">ENGINEERING. </span>
+              <span className="text-bold">PERSPECTIVE.</span>
+            </div>
           </div>
 
           <a href="#all-insights" className="insights-view-all">
