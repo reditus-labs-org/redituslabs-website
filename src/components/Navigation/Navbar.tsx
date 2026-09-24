@@ -43,7 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               className="navbar-brand" 
               onClick={(e) => { e.preventDefault(); handleNav('home'); }}
             >
-              REDITUS
+              <span className="text-light">REDI</span><span className="text-black">TUS</span>
             </a>
           </div>
 

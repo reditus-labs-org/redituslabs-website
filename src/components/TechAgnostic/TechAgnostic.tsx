@@ -33,7 +33,9 @@ export const TechAgnostic: React.FC = () => {
           {/* Left Column Content */}
           <div className="tech-agnostic-left">
             <h2 className="tech-agnostic-title">
-              Technology<br />agnostic.<br />Outcome focused.
+              <span className="text-light">Technology</span><br />
+              <span className="text-regular">agnostic.</span><br />
+              <span className="text-black">Outcome focused.</span>
             </h2>
 
             <p className="tech-agnostic-desc">

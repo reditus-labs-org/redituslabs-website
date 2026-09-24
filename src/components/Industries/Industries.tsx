@@ -18,8 +18,8 @@ export const Industries: React.FC = () => {
       <div className="container">
         <div className="industries-header">
           <div>
-            <h1 className="industries-title">Industries</h1>
-            <div className="industries-subline">DIFFERENT WORLDS. SAME POSSIBILITIES.</div>
+            <h1 className="industries-title"><span className="text-light">Select </span><span className="text-black">Industries</span></h1>
+            <div className="industries-subline"><span className="text-light">DIFFERENT WORLDS.</span> <span className="text-medium">SAME POSSIBILITIES.</span></div>
           </div>
 
           <a href="#all-industries" className="industries-view-all">

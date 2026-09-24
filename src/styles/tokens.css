@@ -19,9 +19,21 @@
   --c-seafoam: #38bfa0;
   --c-brass: #c9965d;
 
-  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Newsreader', Georgia, serif;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --wght-light: 80;
+  --wght-regular: 110;
+  --wght-medium: 140;
+  --wght-bold: 185;
+  --wght-black: 600;
+
+  --font-display: 'Albra Display', 'Albra', Georgia, serif;
+  --font-serif: 'Albra Display', 'Albra', Georgia, serif;
+  --font-sans: 'Albra Display', 'Albra', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Space Grotesk', monospace;
 
   --container-max: 1440px;

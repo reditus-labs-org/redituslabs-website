@@ -7,13 +7,22 @@
 }
 
 .trusted-title {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.25em;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: 2.25rem;
   text-align: left;
+}
+
+.trusted-title .text-light {
+  font-weight: var(--fw-light);
+}
+
+.trusted-title .text-bold {
+  font-weight: var(--fw-bold);
+  color: #ffffff;
 }
 
 .trusted-grid {

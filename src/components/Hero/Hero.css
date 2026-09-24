@@ -1,11 +1,3 @@
-@font-face {
-  font-family: 'Dujitsu';
-  src: url('/fonts/Dujitsu.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 .hero-editorial-section {
   position: relative;
   min-height: 100vh;
@@ -17,7 +9,7 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 10;
-  font-family: 'Dujitsu', var(--font-sans);
+  font-family: var(--font-sans);
 }
 
 /* 1. Full-bleed Background Architectural Visual & Video */
@@ -108,23 +100,44 @@
 }
 
 .hero-editorial-eyebrow {
-  font-family: 'Dujitsu', var(--font-mono);
-  font-size: 0.76rem;
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' var(--wght-light);
+  font-size: 0.8rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.52);
+  color: rgba(255, 255, 255, 0.65);
   margin-bottom: 2.2rem;
-  font-weight: 500;
+  font-weight: 300;
 }
 
-/* Editorial Headline */
+/* Editorial Headline with Mixed Weights & Sizes */
 .hero-editorial-headline {
-  font-family: 'Dujitsu', 'Syne', sans-serif;
-  font-weight: normal;
-  font-size: clamp(3.2rem, 5.5vw, 5.2rem);
-  line-height: 1.12;
-  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-feature-settings: "dlig" 1, "liga" 1, "calt" 1;
   margin-bottom: 2.2rem;
+  line-height: 1.06;
+}
+
+.hero-editorial-headline .line-light {
+  font-weight: var(--fw-light);
+  font-variation-settings: 'wght' var(--wght-light);
+  font-size: clamp(2.8rem, 4.8vw, 4.4rem);
+  letter-spacing: 0.03em;
+  opacity: 0.95;
+}
+
+.hero-editorial-headline .line-medium {
+  font-weight: var(--fw-medium);
+  font-variation-settings: 'wght' var(--wght-medium);
+  font-size: clamp(3.2rem, 5.4vw, 5.0rem);
+  letter-spacing: 0.01em;
+}
+
+.hero-editorial-headline .line-black {
+  font-weight: var(--fw-black);
+  font-variation-settings: 'wght' var(--wght-black);
+  font-size: clamp(3.6rem, 6.2vw, 5.6rem);
+  letter-spacing: -0.02em;
 }
 
 .serif-line-wrap {
@@ -149,10 +162,11 @@
 
 /* Supporting Body Text */
 .hero-editorial-body {
-  font-family: var(--font-sans);
-  font-size: clamp(0.85rem, 1.1vw, 0.94rem);
+  font-family: var(--font-display);
+  font-variation-settings: 'wght' var(--wght-regular);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
   line-height: 1.68;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 2.6rem;
   font-weight: 400;
   max-width: 440px;
@@ -253,19 +267,36 @@
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  font-family: 'Dujitsu', var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
   color: rgba(255, 255, 255, 0.75);
   text-transform: uppercase;
+}
+
+.pillar-motto-stack .text-light {
+  font-weight: var(--fw-light);
+  font-variation-settings: 'wght' var(--wght-light);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.pillar-motto-stack .text-medium {
+  font-weight: var(--fw-medium);
+  font-variation-settings: 'wght' var(--wght-medium);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pillar-motto-stack .text-bold {
+  font-weight: var(--fw-bold);
+  font-variation-settings: 'wght' var(--wght-bold);
+  color: #ffffff;
 }
 
 .pillar-accent-note {
   position: absolute;
   right: clamp(2.5rem, 5.5vw, 4.5rem);
   bottom: clamp(3rem, 7.5vh, 5.5rem);
-  font-family: 'Dujitsu', var(--font-mono);
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   color: rgba(255, 255, 255, 0.45);
@@ -313,7 +344,7 @@
 }
 
 .editorial-scroll-label {
-  font-family: 'Dujitsu', var(--font-mono);
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   color: rgba(255, 255, 255, 0.45);

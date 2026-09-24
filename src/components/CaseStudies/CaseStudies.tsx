@@ -16,8 +16,14 @@ export const CaseStudies: React.FC = () => {
       <div className="container">
         <div className="case-studies-header">
           <div>
-            <h2 className="case-studies-title">Case studies</h2>
-            <div className="case-studies-eyebrow">REAL PROBLEMS. REAL ENGINEERING.</div>
+            <h2 className="case-studies-title">
+              <span className="text-light">Selected </span>
+              <span className="text-black">Cases.</span>
+            </h2>
+            <div className="case-studies-eyebrow">
+              <span className="text-regular">REAL PROBLEMS. </span>
+              <span className="text-bold">REAL ENGINEERING.</span>
+            </div>
           </div>
 
           <a href="#case-studies" className="case-studies-all-link">

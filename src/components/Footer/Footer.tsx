@@ -13,8 +13,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="container">
         <div className="grand-footer-top">
           <div className="grand-footer-brand">
-            <h2 className="grand-brand-name">REDITUS</h2>
-            <div className="grand-brand-sub">A PRODUCT ENGINEERING STUDIO</div>
+            <h2 className="grand-brand-name">
+              <span className="text-light">REDI</span><span className="text-black">TUS</span>
+            </h2>
+            <div className="grand-brand-sub">
+              <span className="text-medium">A PRODUCT</span>{' '}
+              <span className="text-light">ENGINEERING STUDIO</span>
+            </div>
           </div>
 
           <div className="grand-footer-nav-grid">
@@ -35,7 +40,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         <div className="grand-footer-middle">
           <blockquote className="grand-footer-quote">
-            “A brighter tomorrow is a well engineered today.”
+            “<span className="text-light">A brighter tomorrow</span>{' '}
+            <span className="text-black">is a well engineered today.</span>”
           </blockquote>
 
           <div className="grand-footer-visual">

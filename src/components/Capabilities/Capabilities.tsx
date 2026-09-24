@@ -59,10 +59,13 @@ export const Capabilities: React.FC = () => {
         {/* Header Area */}
         <div className="capabilities-header">
           <div className="capabilities-title-area">
-            <h2 className="capabilities-heading">What we build</h2>
+            <h2 className="capabilities-heading">
+              <span className="text-light">What we </span>
+              <span className="text-black">build.</span>
+            </h2>
             <p className="capabilities-subtitle">
-              End-to-end product engineering across<br className="desktop-br" />
-              web, mobile, AI, cloud and more.
+              <span className="text-medium">End-to-end product engineering</span>{' '}
+              <span className="text-light">across web, mobile, AI, cloud and beyond.</span>
             </p>
           </div>
 
