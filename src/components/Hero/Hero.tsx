@@ -144,7 +144,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConversation, onNavigate }) =>
           muted
           playsInline
           preload="auto"
-          poster="/assets/images/hero_landscape_pc.png"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
@@ -153,8 +152,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConversation, onNavigate }) =>
 
       {/* Main Viewport Content Frame */}
       <div className="hero-editorial-stage">
-        {/* Left Narrative Block */}
-        <div className="hero-editorial-left-block">
+        {/* Left Architecture Pillar Text (moved from right) */}
+        <div ref={pillarRef} className="hero-editorial-left-pillar">
+          <div className="pillar-block">
+            <div className="pillar-hairline top-hairline" />
+            <div className="pillar-motto-stack">
+              <span className="text-light">RETURN.</span>
+              <span className="text-medium">REIMAGINE.</span>
+              <span className="text-bold">REALIZE.</span>
+            </div>
+            <div className="pillar-hairline bottom-hairline" />
+          </div>
+        </div>
+
+        {/* Lower Left Secondary Editorial Note (moved from right) */}
+        <div className="pillar-accent-note pillar-accent-note-left">
+          <span className="text-light">SAME PROBLEMS.</span><br />
+          <span className="text-medium">HIGHER POSSIBILITIES.</span>
+        </div>
+
+        {/* Right Narrative Block (moved from left) */}
+        <div className="hero-editorial-right-block">
           <div className="hero-editorial-eyebrow">
             A PRODUCT ENGINEERING STUDIO
           </div>
@@ -206,25 +224,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConversation, onNavigate }) =>
               <span>Watch our story</span>
             </a>
           </div>
-        </div>
-
-        {/* Right Architecture Pillar Text */}
-        <div ref={pillarRef} className="hero-editorial-right-pillar">
-          <div className="pillar-block">
-            <div className="pillar-hairline top-hairline" />
-            <div className="pillar-motto-stack">
-              <span className="text-light">RETURN.</span>
-              <span className="text-medium">REIMAGINE.</span>
-              <span className="text-bold">REALIZE.</span>
-            </div>
-            <div className="pillar-hairline bottom-hairline" />
-          </div>
-        </div>
-
-        {/* Lower Right Secondary Editorial Note */}
-        <div className="pillar-accent-note">
-          <span className="text-light">SAME PROBLEMS.</span><br />
-          <span className="text-medium">HIGHER POSSIBILITIES.</span>
         </div>
       </div>
 

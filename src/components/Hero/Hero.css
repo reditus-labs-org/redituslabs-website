@@ -90,13 +90,14 @@
   box-sizing: border-box;
 }
 
-/* Left Narrative Block */
-.hero-editorial-left-block {
+/* Right Narrative Block (moved from left) */
+.hero-editorial-right-block {
   max-width: 490px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   z-index: 5;
+  margin-left: auto;
 }
 
 .hero-editorial-eyebrow {
@@ -238,10 +239,10 @@
   transform: scale(1.05);
 }
 
-/* 4. Right-side Architecture Pillar Text */
-.hero-editorial-right-pillar {
+/* 4. Left-side Architecture Pillar Text (moved from right) */
+.hero-editorial-left-pillar {
   position: absolute;
-  right: clamp(2.5rem, 5.5vw, 4.5rem);
+  left: clamp(2.5rem, 5.5vw, 4.5rem);
   top: 52%;
   transform: translateY(-50%);
   display: flex;
@@ -294,7 +295,20 @@
 
 .pillar-accent-note {
   position: absolute;
-  right: clamp(2.5rem, 5.5vw, 4.5rem);
+  left: clamp(2.5rem, 5.5vw, 4.5rem);
+  bottom: clamp(3rem, 7.5vh, 5.5rem);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.65;
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+.pillar-accent-note-left {
+  position: absolute;
+  left: clamp(2.5rem, 5.5vw, 4.5rem);
   bottom: clamp(3rem, 7.5vh, 5.5rem);
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -361,7 +375,10 @@
   .hero-editorial-stage {
     padding: 0 2rem;
   }
-  .hero-editorial-right-pillar {
+  .hero-editorial-left-pillar {
+    display: none;
+  }
+  .pillar-accent-note-left {
     display: none;
   }
   .hero-editorial-scroll-row {

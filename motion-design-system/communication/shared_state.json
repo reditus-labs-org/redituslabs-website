@@ -1,0 +1,18 @@
+{
+  "phase": "SPECIFY",
+  "status": "IN_PROGRESS",
+  "agents": {
+    "CREATIVE_DIRECTOR": { "status": "WORKING", "deliverables_completed": 0, "deliverables_total": 4 },
+    "TECHNICAL_3D_ARTIST": { "status": "WAITING", "deliverables_completed": 0, "deliverables_total": 4 },
+    "MOTION_SYSTEMS_ENGINEER": { "status": "WAITING", "deliverables_completed": 0, "deliverables_total": 5 },
+    "QA_VERIFIER": { "status": "WAITING", "deliverables_completed": 0, "deliverables_total": 4 },
+    "INTEGRATION_ENGINEER": { "status": "WAITING", "deliverables_completed": 0, "deliverables_total": 4 }
+  },
+  "gate_approvals": {
+    "SPECIFY_TO_ENVIRONMENT": { "CREATIVE_DIRECTOR": false, "QA_VERIFIER": false },
+    "ENVIRONMENT_TO_VERIFY": { "TECHNICAL_3D_ARTIST": false, "MOTION_SYSTEMS_ENGINEER": false, "INTEGRATION_ENGINEER": false },
+    "VERIFY_TO_COMPLETE": { "QA_VERIFIER": false, "CREATIVE_DIRECTOR": false }
+  },
+  "blockers": [],
+  "updated_at": "2026-09-29T14:32:00.000Z"
+}
