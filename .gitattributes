@@ -1,0 +1,55 @@
+# Normalize line endings on checkin, convert to LF on commit for text files.
+* text=auto eol=lf
+
+# Windows-only scripts
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Force LF for shell scripts
+*.sh text eol=lf
+
+# Treat source files as text even without extension detection
+*.ts   text
+*.tsx  text
+*.js   text
+*.mjs  text
+*.jsx  text
+*.css  text
+*.html text
+*.json text
+*.md   text
+*.svg  text
+
+# Never modify line endings / treat as binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.avif binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
+*.gz   binary
+*.woff  binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary
+*.eot  binary
+*.mp3  binary
+*.mp4  binary
+*.glb  binary
+*.gltf text eol=lf
+*.hdr  binary
+*.exr  binary
+
+# Lockfiles: keep as-is, no line-ending normalization churn
+package-lock.json -diff linguist-generated=true
+
+# Mark generated/vendored directories (no line ending or diff processing)
+node_modules/** -diff
+dist/** linguist-generated=true
+
+# Diff and merge helpers
+*.lock diff=lockfile

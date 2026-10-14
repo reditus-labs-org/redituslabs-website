@@ -1,0 +1,21 @@
+import 'lenis/dist/lenis.css';
+import './style.css';
+import { page } from './page';
+import { initMotion } from './motion';
+const app = document.querySelector<HTMLDivElement>('#app')!;
+app.innerHTML = page;
+const disposeMotion = initMotion(app);
+const form = document.querySelector<HTMLFormElement>('#project-form')!;
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  if (!form.reportValidity()) return;
+  const data = new FormData(form);
+  const name = String(data.get('name') ?? '').trim();
+  const email = String(data.get('email') ?? '').trim();
+  const message = String(data.get('message') ?? '').trim();
+  const subject = encodeURIComponent(`Project inquiry — ${name}`);
+  const body = encodeURIComponent(`Hello Reditus Labs,\n\n${message}\n\nName: ${name}\nEmail: ${email}`);
+  document.querySelector<HTMLElement>('#form-status')!.textContent = 'Your email app will open with your inquiry. Please send it there. If it does not open, email redtiduslabs@gmail.com directly.';
+  window.location.href = `mailto:redtiduslabs@gmail.com?subject=${subject}&body=${body}`;
+});
+window.addEventListener('pagehide', event => { if (!event.persisted) disposeMotion(); });
